@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 24, 2012 4:44:03 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.pipegrid.model.Lot" table="lot" catalog="pipegrid">
+        <id name="lotId" type="long">
+            <column name="lot_id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="userByUpdateUserId" class="com.pipegrid.model.User" fetch="select">
+            <column name="update_user_id" />
+        </many-to-one>
+        <many-to-one name="company" class="com.pipegrid.model.Company" fetch="select">
+            <column name="company_id" />
+        </many-to-one>
+        <many-to-one name="userByCreateUserId" class="com.pipegrid.model.User" fetch="select">
+            <column name="create_user_id" not-null="true" />
+        </many-to-one>
+        <property name="description" type="string">
+            <column name="description" />
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="create_date" length="19" not-null="true" />
+        </property>
+        <property name="updateDate" type="timestamp">
+            <column name="update_date" length="19" />
+        </property>
+        <property name="inactiveDate" type="timestamp">
+            <column name="inactive_date" length="19" />
+        </property>
+        <property name="isPublic" type="java.lang.Boolean">
+            <column name="is_public" />
+        </property>
+        <set name="itemFileses" table="item_files" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="lot_id" />
+            </key>
+            <one-to-many class="com.pipegrid.model.ItemFiles" />
+        </set>
+        <set name="itemImageses" table="item_images" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="lot_id" />
+            </key>
+            <one-to-many class="com.pipegrid.model.ItemImages" />
+        </set>
+        <set name="items" table="item" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="lot_id" />
+            </key>
+            <one-to-many class="com.pipegrid.model.Item" />
+        </set>
+    </class>
+</hibernate-mapping>

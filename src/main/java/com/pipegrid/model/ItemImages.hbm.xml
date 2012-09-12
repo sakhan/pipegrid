@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 24, 2012 4:44:03 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.pipegrid.model.ItemImages" table="item_images" catalog="pipegrid">
+        <id name="imageId" type="long">
+            <column name="image_id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="item" class="com.pipegrid.model.Item" fetch="select">
+            <column name="item_id" />
+        </many-to-one>
+        <many-to-one name="lot" class="com.pipegrid.model.Lot" fetch="select">
+            <column name="lot_id" />
+        </many-to-one>
+        <property name="description" type="string">
+            <column name="description" length="50" />
+        </property>
+        <property name="data" type="binary">
+            <column name="data" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

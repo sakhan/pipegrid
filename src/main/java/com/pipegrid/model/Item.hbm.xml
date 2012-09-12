@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 24, 2012 4:44:03 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.pipegrid.model.Item" table="item" catalog="pipegrid">
+        <id name="itemId" type="long">
+            <column name="item_id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="stateLkup" class="com.pipegrid.model.StateLkup" fetch="select">
+            <column name="state_code" length="2" />
+        </many-to-one>
+        <many-to-one name="userByUpdateUserId" class="com.pipegrid.model.User" fetch="select">
+            <column name="update_user_id" />
+        </many-to-one>
+        <many-to-one name="company" class="com.pipegrid.model.Company" fetch="select">
+            <column name="company_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="userByCreateUserId" class="com.pipegrid.model.User" fetch="select">
+            <column name="create_user_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="lot" class="com.pipegrid.model.Lot" fetch="select">
+            <column name="lot_id" />
+        </many-to-one>
+        <many-to-one name="countryLkup" class="com.pipegrid.model.CountryLkup" fetch="select">
+            <column name="country_id" />
+        </many-to-one>
+        <property name="conditionCode" type="string">
+            <column name="condition_code" length="2" not-null="true" />
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="50" />
+        </property>
+        <property name="priceDollars" type="big_decimal">
+            <column name="price_dollars" precision="10" />
+        </property>
+        <property name="isPublic" type="boolean">
+            <column name="is_public" not-null="true" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="200" />
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="create_date" length="19" not-null="true" />
+        </property>
+        <property name="updateDate" type="timestamp">
+            <column name="update_date" length="19" />
+        </property>
+        <set name="itemPipes" table="item_pipe" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="item_id" not-null="true" unique="true" />
+            </key>
+            <one-to-many class="com.pipegrid.model.ItemPipe" />
+        </set>
+        <set name="itemImageses" table="item_images" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="item_id" />
+            </key>
+            <one-to-many class="com.pipegrid.model.ItemImages" />
+        </set>
+        <set name="itemFileses" table="item_files" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="item_id" />
+            </key>
+            <one-to-many class="com.pipegrid.model.ItemFiles" />
+        </set>
+    </class>
+</hibernate-mapping>
