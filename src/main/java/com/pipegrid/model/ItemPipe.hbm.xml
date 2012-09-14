@@ -8,7 +8,7 @@
             <column name="pipe_id" />
             <generator class="identity" />
         </id>        
-        <many-to-one name="item" class="com.pipegrid.model.Item" fetch="join">
+        <many-to-one name="item" class="com.pipegrid.model.Item" fetch="join" cascade="all">
             <column name="item_id" not-null="true" unique="true" />
         </many-to-one>
         <property name="pipeTypeCode" type="char">

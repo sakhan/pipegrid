@@ -9,5 +9,6 @@ public interface ItemPipeRepository
     
     public ItemPipe getItemPipe(Long pipeId);
     
+    public ItemPipe loadItemPipe(Long pipeId);
     
 }

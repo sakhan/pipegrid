@@ -4,9 +4,9 @@
 <!-- Generated Aug 24, 2012 4:44:03 PM by Hibernate Tools 4.0.0 -->
 <hibernate-mapping>
     <class name="com.pipegrid.model.Item" table="item" catalog="pipegrid">
-        <id name="itemId" type="long">
+        <id name="id" type="long">
             <column name="item_id" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <many-to-one name="stateLkup" class="com.pipegrid.model.StateLkup" fetch="select">
             <column name="state_code" length="2" />
@@ -47,19 +47,21 @@
         <property name="updateDate" type="timestamp">
             <column name="update_date" length="19" />
         </property>
+        <!-- 
         <set name="itemPipes" table="item_pipe" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="item_id" not-null="true" unique="true" />
             </key>
             <one-to-many class="com.pipegrid.model.ItemPipe" />
         </set>
-        <set name="itemImageses" table="item_images" inverse="true" lazy="true" fetch="select">
+         -->
+        <set name="itemImages" table="item_images" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="item_id" />
             </key>
             <one-to-many class="com.pipegrid.model.ItemImages" />
         </set>
-        <set name="itemFileses" table="item_files" inverse="true" lazy="true" fetch="select">
+        <set name="itemFiles" table="item_files" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="item_id" />
             </key>

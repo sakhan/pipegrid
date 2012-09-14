@@ -7,9 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.Assert;
 
+import com.pipegrid.model.Company;
 import com.pipegrid.model.RoleLkup;
-import com.pipegrid.model.User;
 import com.pipegrid.model.RoleLkup.Role;
+import com.pipegrid.model.User;
 import com.pipegrid.repository.UserRepository;
 
 @Repository("userRepository")
@@ -17,6 +18,18 @@ public class UserHibernateRepository implements UserRepository
 {
     @Autowired
     private SessionFactory _factory;
+
+    @Override
+    public User getUser(Long id)
+    {
+        return (User)_factory.getCurrentSession().get(User.class, id);
+    }
+
+    @Override
+    public User loadUser(Long id)
+    {
+        return (User)_factory.getCurrentSession().load(User.class, id);
+    }
     
     @Override
     public void saveUser(User user)
@@ -38,17 +51,17 @@ public class UserHibernateRepository implements UserRepository
         user.setRoleLkup(roleLkup);
         saveUser(user);
     }
-
-    @Override
-    public void getUser(Long id)
-    {
-        _factory.getCurrentSession().get(User.class, id);
-    }
-    
+        
     @Override
     public RoleLkup loadRole(Role role)
     {
         return (RoleLkup)_factory.getCurrentSession().load(RoleLkup.class, role.getCode());
+    }
+    
+    @Override
+    public Company loadCompany(Long id)
+    {
+        return (Company)_factory.getCurrentSession().load(Company.class, id);
     }
 
 }

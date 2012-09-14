@@ -20,17 +20,16 @@ public class ItemPipe extends Persist {
 	public ItemPipe() {
 	}
 
-    public ItemPipe(Item item, char pipeTypeCode,
+	public ItemPipe(Item item, char pipeTypeCode,
 			BigDecimal outsideDiameterIn) {
 		this.item = item;
 		this.pipeTypeCode = pipeTypeCode;
 		this.outsideDiameterIn = outsideDiameterIn;
 	}
 
-	public ItemPipe(long pipeId, Item item, char pipeTypeCode,
+	public ItemPipe(Item item, char pipeTypeCode,
 			BigDecimal outsideDiameterIn, Long quantityFeet,
 			BigDecimal wallThicknessIn, String coating, BigDecimal weightLbsFt) {
-		super._id = pipeId;
 		this.item = item;
 		this.pipeTypeCode = pipeTypeCode;
 		this.outsideDiameterIn = outsideDiameterIn;

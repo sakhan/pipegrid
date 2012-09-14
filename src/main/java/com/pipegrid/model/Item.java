@@ -12,12 +12,6 @@ import java.util.Set;
  */
 public class Item extends Persist 
 {
-//    condition_code CHAR(2) NOT NULL,
-//    is_public BOOL NOT NULL DEFAULT 1,
-//    create_user_id BIGINT NOT NULL,
-//    create_date DATETIME NOT NULL,
-//    company_id BIGINT NOT NULL,
-
 	private StateLkup stateLkup;
 	private User userByUpdateUserId;
 	private Company company;
@@ -31,27 +25,24 @@ public class Item extends Persist
 	private String description;
 	private Date createDate;
 	private Date updateDate;
-	private Set<ItemPipe> itemPipes = new HashSet<ItemPipe>(0);
-	private Set<ItemImages> itemImageses = new HashSet<ItemImages>(0);
-	private Set<ItemFiles> itemFileses = new HashSet<ItemFiles>(0);
+	private Set<ItemImages> itemImages = new HashSet<ItemImages>(0);
+	private Set<ItemFiles> itemFiles = new HashSet<ItemFiles>(0);
 
 	public Item() {
 	}
 
 	public Item(Company company, User userByCreateUserId,
-			String conditionCode, boolean isPublic, Date createDate) {
+			String conditionCode, boolean isPublic) {
 		this.company = company;
 		this.userByCreateUserId = userByCreateUserId;
 		this.conditionCode = conditionCode;
 		this.isPublic = isPublic;
-		this.createDate = createDate;
 	}
 
 	public Item(StateLkup stateLkup, User userByUpdateUserId,
 			Company company, User userByCreateUserId, Lot lot,
 			CountryLkup countryLkup, String conditionCode, String city,
 			BigDecimal priceDollars, boolean isPublic, String description,
-			Date createDate, Date updateDate, Set<ItemPipe> itemPipes,
 			Set<ItemImages> itemImageses, Set<ItemFiles> itemFileses) {
 		this.stateLkup = stateLkup;
 		this.userByUpdateUserId = userByUpdateUserId;
@@ -64,11 +55,8 @@ public class Item extends Persist
 		this.priceDollars = priceDollars;
 		this.isPublic = isPublic;
 		this.description = description;
-		this.createDate = createDate;
-		this.updateDate = updateDate;
-		this.itemPipes = itemPipes;
-		this.itemImageses = itemImageses;
-		this.itemFileses = itemFileses;
+		this.itemImages = itemImageses;
+		this.itemFiles = itemFileses;
 	}
 
 	public StateLkup getStateLkup() {
@@ -175,28 +163,20 @@ public class Item extends Persist
 		this.updateDate = updateDate;
 	}
 
-	public Set<ItemPipe> getItemPipes() {
-		return this.itemPipes;
+	public Set<ItemImages> getItemImages() {
+		return this.itemImages;
 	}
 
-	public void setItemPipes(Set<ItemPipe> itemPipes) {
-		this.itemPipes = itemPipes;
+	public void setItemImages(Set<ItemImages> itemImages) {
+		this.itemImages = itemImages;
 	}
 
-	public Set<ItemImages> getItemImageses() {
-		return this.itemImageses;
+	public Set<ItemFiles> getItemFiles() {
+		return this.itemFiles;
 	}
 
-	public void setItemImageses(Set<ItemImages> itemImageses) {
-		this.itemImageses = itemImageses;
-	}
-
-	public Set<ItemFiles> getItemFileses() {
-		return this.itemFileses;
-	}
-
-	public void setItemFileses(Set<ItemFiles> itemFileses) {
-		this.itemFileses = itemFileses;
+	public void setItemFiles(Set<ItemFiles> itemFiles) {
+		this.itemFiles = itemFiles;
 	}
 
 }

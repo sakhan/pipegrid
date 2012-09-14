@@ -4,18 +4,18 @@
 <!-- Generated Aug 24, 2012 4:44:03 PM by Hibernate Tools 4.0.0 -->
 <hibernate-mapping>
     <class name="com.pipegrid.model.Company" table="company" catalog="pipegrid">
-        <id name="companyId" type="long">
+        <id name="id" type="long">
             <column name="company_id" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <many-to-one name="stateLkup" class="com.pipegrid.model.StateLkup" fetch="select">
             <column name="state_code" length="2" />
         </many-to-one>
         <many-to-one name="companyTypeLkup" class="com.pipegrid.model.CompanyTypeLkup" fetch="select">
-            <column name="company_type_code" length="1" not-null="true" />
+            <column name="company_type_code" length="1" />
         </many-to-one>
         <many-to-one name="countryLkup" class="com.pipegrid.model.CountryLkup" fetch="select">
-            <column name="country_id" not-null="true" />
+            <column name="country_id" />
         </many-to-one>
         <property name="name" type="string">
             <column name="name" length="100" not-null="true" unique="true" />
@@ -57,7 +57,7 @@
             <column name="create_date" length="19" not-null="true" />
         </property>
         <property name="createUserId" type="long">
-            <column name="create_user_id" not-null="true" />
+            <column name="create_user_id" />
         </property>
         <property name="updateDate" type="timestamp">
             <column name="update_date" length="19" />
@@ -71,6 +71,7 @@
             </key>
             <one-to-many class="com.pipegrid.model.CompanyClassifications" />
         </set>
+        <!--  
         <set name="items" table="item" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="company_id" not-null="true" />
@@ -89,5 +90,6 @@
             </key>
             <one-to-many class="com.pipegrid.model.User" />
         </set>
+         -->
     </class>
 </hibernate-mapping>
