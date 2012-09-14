@@ -12,16 +12,15 @@ public class UserHibernateRepositoryTest extends BaseTestCase
 {
     protected UserRepository userRepository;
     
-    public void testCreateUser()
+    public void testRegisterUserWithNewCompany()
     {
         final User user = new User("skhan" + (new Date()).toString(), "password", "Sheraz", "Khan");
-        Company company = new Company(null, null, "LiteSpeed", new Date());
-        user.setCompany(company);
-        assertInsert("User", new CrudCallBack() {
+        final Company company = new Company(null, null, "LiteSpeed");
+        assertInsert(new String[] {"User", "Company"}, new CrudCallBack() {
             @Override
             protected void doCrud()
             {
-                userRepository.saveUser(user, Role.ADMIN);
+                userRepository.registerUserNewCompany(user, company, Role.ADMIN);
             }
         });
 //        commitTransaction();

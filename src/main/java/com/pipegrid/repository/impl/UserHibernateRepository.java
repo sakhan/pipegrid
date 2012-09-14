@@ -32,24 +32,17 @@ public class UserHibernateRepository implements UserRepository
     }
     
     @Override
-    public void saveUser(User user)
+    public void updateUser(User user)
     {
         Assert.notNull(user);
-        if(user.getId() == null)
-        {
-            user.setCreateDate(new Date());
-        }
-        _factory.getCurrentSession().saveOrUpdate(user);
+        _factory.getCurrentSession().update(user);
     }
     
     @Override
-    public void saveUser(User user, Role role)
+    public void updateUser(User user, Role role)
     {
-        Assert.notNull(user);
-        Assert.notNull(role);
-        RoleLkup roleLkup = (RoleLkup)_factory.getCurrentSession().load(RoleLkup.class, role.getCode());
-        user.setRoleLkup(roleLkup);
-        saveUser(user);
+        setRoleOnUser(user, role);
+        updateUser(user);
     }
         
     @Override
@@ -64,4 +57,48 @@ public class UserHibernateRepository implements UserRepository
         return (Company)_factory.getCurrentSession().load(Company.class, id);
     }
 
+    @Override
+    public void saveCompany(Company company)
+    {
+        Assert.notNull(company);
+        if(company.getId() == null)
+        {
+            company.setCreateDate(new Date());
+        }
+        _factory.getCurrentSession().saveOrUpdate(company);
+    }
+    
+    /***** Service type methods ***************/
+    
+    public void registerUserNewCompany(User user, Company company, Role role)
+    {
+        Assert.notNull(company);
+        Assert.isTrue(company.getUsers().isEmpty());
+        
+        // this should always be true in this method
+        if(user.getId() == null)
+        {
+            user.setCreateDate(new Date());
+        }
+        
+        setRoleOnUser(user, role);
+        company.addUser(user);
+        saveCompany(company);
+    }
+    
+    public void registerUserExistingCompany(User user, Long companyId, Role role)
+    {
+        // TODO
+    }
+    
+    /**** private methods *****/
+    private void setRoleOnUser(User user, Role role)
+    {
+        Assert.notNull(user);
+        Assert.notNull(role);
+        RoleLkup roleLkup = (RoleLkup)_factory.getCurrentSession().load(RoleLkup.class, role.getCode());
+        user.setRoleLkup(roleLkup);
+    }
+    
+    
 }

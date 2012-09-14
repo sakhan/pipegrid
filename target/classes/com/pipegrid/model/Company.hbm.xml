@@ -84,12 +84,12 @@
             </key>
             <one-to-many class="com.pipegrid.model.Lot" />
         </set>
-        <set name="users" table="user" inverse="true" lazy="true" fetch="select">
+        -->
+        <set name="users" table="user" inverse="true" lazy="true" fetch="select" cascade="all">
             <key>
-                <column name="company_id" />
+                <column name="company_id" not-null="true"/>
             </key>
             <one-to-many class="com.pipegrid.model.User" />
         </set>
-         -->
     </class>
 </hibernate-mapping>

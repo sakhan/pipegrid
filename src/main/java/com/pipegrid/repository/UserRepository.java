@@ -7,9 +7,9 @@ import com.pipegrid.model.User;
 
 public interface UserRepository
 {
-    public void saveUser(User user);
+    public void updateUser(User user);
     
-    public void saveUser(User user, Role role);
+    public void updateUser(User user, Role role);
     
     public User getUser(Long id);
     
@@ -18,5 +18,13 @@ public interface UserRepository
     public RoleLkup loadRole(Role role);
 
     public Company loadCompany(Long id);
+    
+    public void saveCompany(Company company);
+    
+    // Service methods
+    
+    public void registerUserNewCompany(User user, Company company, Role role);
+    
+    public void registerUserExistingCompany(User user, Long companyId, Role role);
     
 }

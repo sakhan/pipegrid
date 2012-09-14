@@ -31,19 +31,17 @@ public class Company extends Persist
 	private long createUserId;
 	private Date updateDate;
 	private Long updateUserId;
-	private Set<CompanyClassifications> companyClassificationses = new HashSet<CompanyClassifications>(
-			0);
+	private Set<CompanyClassifications> companyClassificationses = new HashSet<CompanyClassifications>(0);
+	private Set<User> users = new HashSet<User>(0);
 
 	public Company() {
 	}
 
 	public Company(CompanyTypeLkup companyTypeLkup,
-			CountryLkup countryLkup, String name, Date createDate
-			) {
+			CountryLkup countryLkup, String name) {
 		this.companyTypeLkup = companyTypeLkup;
 		this.countryLkup = countryLkup;
 		this.name = name;
-		this.createDate = createDate;
 		//this.createUserId = createUserId;
 	}
 
@@ -238,4 +236,19 @@ public class Company extends Persist
 		this.companyClassificationses = companyClassificationses;
 	}
 
-	}
+    public Set<User> getUsers()
+    {
+        return users;
+    }
+    public void setUsers(Set<User> users)
+    {
+        this.users = users;
+    }
+    
+    public void addUser(User user)
+    {
+        user.setCompany(this);
+        this.users.add(user);
+    }
+
+}

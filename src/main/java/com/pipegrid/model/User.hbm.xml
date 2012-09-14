@@ -9,7 +9,7 @@
             <generator class="identity" />
         </id>
         <many-to-one name="company" class="com.pipegrid.model.Company" fetch="join">
-            <column name="company_id" />
+            <column name="company_id" not-null="true"/>
         </many-to-one>
         <many-to-one name="roleLkup" class="com.pipegrid.model.RoleLkup" fetch="join">
             <column name="role_code" length="1" not-null="true" />
