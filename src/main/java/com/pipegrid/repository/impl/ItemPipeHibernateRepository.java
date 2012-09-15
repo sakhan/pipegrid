@@ -9,6 +9,7 @@ import org.springframework.util.Assert;
 
 import com.pipegrid.model.ItemPipe;
 import com.pipegrid.repository.ItemPipeRepository;
+import com.pipegrid.repository.UserRepository;
 
 
 @Repository("itemPipeRepository")
@@ -16,6 +17,9 @@ public class ItemPipeHibernateRepository implements ItemPipeRepository
 {
     @Autowired
     private SessionFactory _factory;
+    
+    @Autowired
+    private UserRepository _userRepository;
     
     @Override
     public ItemPipe loadItemPipe(Long pipeId)
@@ -30,16 +34,27 @@ public class ItemPipeHibernateRepository implements ItemPipeRepository
     }
     
     @Override
-    public void saveItemPipe(ItemPipe pipe)
+    public void createItemPipe(ItemPipe pipe, Long userId, Long companyId)
     {
         Assert.notNull(pipe);
-        Assert.notNull(pipe.getItem());
-        Date currentDate = new Date();
+        Assert.notNull(userId);
+        Assert.notNull(companyId);
+        pipe.getItem().setUserByCreateUserId(_userRepository.loadUser(userId));
+        pipe.getItem().setCompany(_userRepository.loadCompany(companyId));
         if(pipe.getId() == null)
         {
-            pipe.getItem().setCreateDate(currentDate);
+            pipe.getItem().setCreateDate(new Date());
         }
-        pipe.getItem().setUpdateDate(currentDate);
+        _factory.getCurrentSession().saveOrUpdate(pipe);
+    }
+    
+    @Override
+    public void updateItemPipe(ItemPipe pipe, Long userId)
+    {
+        Assert.notNull(pipe);
+        Assert.notNull(pipe.getId());
+        pipe.getItem().setUpdateDate(new Date());
+        pipe.getItem().setUserByUpdateUserId(_userRepository.loadUser(userId));
         _factory.getCurrentSession().saveOrUpdate(pipe);
     }
     

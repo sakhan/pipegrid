@@ -10,6 +10,8 @@ import com.pipegrid.test.BaseTestCase;
 
 public class UserHibernateRepositoryTest extends BaseTestCase
 {
+    private Long _userId = new Long(10);
+    
     protected UserRepository userRepository;
     
     public void testRegisterUserWithNewCompany()
@@ -23,18 +25,18 @@ public class UserHibernateRepositoryTest extends BaseTestCase
                 userRepository.registerUserNewCompany(user, company, Role.ADMIN);
             }
         });
-//        commitTransaction();
+        //commitTransaction();
         assertNotNull(user.getId());
         assertNotNull(user.getCompany().getId());
     }
     
     public void testGetUser()
     {
-        Long userId = new Long(2);
-        User user = userRepository.getUser(userId);
-        assertNotNull(user);
+        User user = userRepository.getUser(_userId);
+        assertNotNull("user is null",user);
         assertNotNull(user.getUsername());
-        assertEquals(userId, user.getId()); 
+        assertEquals(_userId, user.getId());
+        assertNotNull("company is null",user.getCompany());
     }
     
     
