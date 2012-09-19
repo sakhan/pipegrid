@@ -1,0 +1,3617 @@
+/* 
+ * Detailed information about this CSS: h5bp.com/css
+ * 
+ * ==|== normalize.css ==========================================================
+ */
+
+
+/* =============================================================================
+   HTML5 display definitions
+   ========================================================================== */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio:not([controls]) { display: none; }
+[hidden] { display: none; }
+
+/* =============================================================================
+   Base
+   ========================================================================== */
+
+/*
+ * 1. Correct text resizing oddly in IE6/7 when body font-size is set using em units
+ * 2. Force vertical scrollbar in non-IE
+ * 3. Prevent iOS text size adjust on device orientation change, without disabling user zoom: h5bp.com/g
+ * SDM - Modded the html and body selector
+ */
+
+html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+/* html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; } */
+
+body { font-size: 100%; line-height: 1.231; }
+/* body { margin: 0; font-size: 13px; line-height: 1.231; } */
+
+body, button, input, select, textarea { font-family: sans-serif; color: #222; }
+
+/* 
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate
+ */
+
+::-moz-selection { background: #B00000; color: #fff; text-shadow: none; }
+::selection { background: #B00000; color: #fff; text-shadow: none; }
+
+
+/* =============================================================================
+   Links
+   ========================================================================== */
+
+/*
+ * SDM - Modded the focus selector
+ */
+
+a { color: #00e; }
+a:visited { color: #551a8b; }
+a:hover { color: #06e; }
+a:focus { outline: none; }
+/* a:focus { outline: thin dotted; } */
+
+/* Improve readability when focused and hovered in all browsers: h5bp.com/h */
+a:hover, a:active { outline: 0; }
+
+
+/* =============================================================================
+   Typography
+   ========================================================================== */
+
+abbr[title] { border-bottom: 1px dotted; }
+
+b, strong { font-weight: bold; }
+
+blockquote { margin: 1em 40px; }
+
+dfn { font-style: italic; }
+
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+
+ins { background: #ff9; color: #000; text-decoration: none; }
+
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+
+/* Redeclare monospace font family: h5bp.com/j */
+pre, code, kbd, samp { font-family: monospace, monospace; _font-family: 'courier new', monospace; font-size: 1em; }
+
+/* Improve readability of pre-formatted text in all browsers */
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+
+q { quotes: none; }
+q:before, q:after { content: ""; content: none; }
+
+small { font-size: 85%; }
+
+/* Position subscript and superscript content without affecting line-height: h5bp.com/k */
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+
+/* =============================================================================
+   Lists
+   ========================================================================== */
+
+/*
+ * SDM - Modded the lists selectors
+ */
+
+ol, ul { list-style: none; }
+/* ul, ol { margin: 1em 0; padding: 0 0 0 40px; } */
+/* dd { margin: 0 0 0 40px; } */
+/* nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; } */
+
+
+/* =============================================================================
+   Embedded content
+   ========================================================================== */
+
+/*
+ * 1. Improve image quality when scaled in IE7: h5bp.com/d
+ * 2. Remove the gap between images and borders on image containers: h5bp.com/e 
+ */
+
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+/*
+ * Correct overflow not hidden in IE9 
+ */
+
+svg:not(:root) { overflow: hidden; }
+
+
+/* =============================================================================
+   Figures
+   ========================================================================== */
+
+figure { margin: 0; }
+
+
+/* =============================================================================
+   Forms
+   ========================================================================== */
+
+form { margin: 0; }
+fieldset { border: 0; margin: 0; padding: 0; }
+
+/* Indicate that 'label' will shift focus to the associated form element */
+label { cursor: pointer; }
+
+/* 
+ * 1. Correct color not inheriting in IE6/7/8/9 
+ * 2. Correct alignment displayed oddly in IE6/7 
+ */
+
+legend { border: 0; *margin-left: -7px; padding: 0; }
+
+/*
+ * 1. Correct font-size not inheriting in all browsers
+ * 2. Remove margins in FF3/4 S5 Chrome
+ * 3. Define consistent vertical alignment display in all browsers
+ */
+
+button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
+
+/*
+ * 1. Define line-height as normal to match FF3/4 (set using !important in the UA stylesheet)
+ * 2. Correct inner spacing displayed oddly in IE6/7
+ */
+
+button, input { line-height: normal; *overflow: visible; }
+
+/*
+ * Reintroduce inner spacing in 'table' to avoid overlap and whitespace issues in IE6/7
+ */
+
+table button, table input { *overflow: auto; }
+
+/*
+ * 1. Display hand cursor for clickable form elements
+ * 2. Allow styling of clickable form elements in iOS
+ */
+
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
+
+/*
+ * Consistent box sizing and appearance
+ */
+
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; }
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+
+/* 
+ * Remove inner padding and border in FF3/4: h5bp.com/l 
+ */
+
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+
+/* 
+ * 1. Remove default vertical scrollbar in IE6/7/8/9 
+ * 2. Allow only vertical resizing
+ */
+
+textarea { overflow: auto; vertical-align: top; resize: vertical; }
+
+/* Colors for form validity */
+input:valid, textarea:valid {  }
+input:invalid, textarea:invalid { background-color: #f0dddd; }
+
+
+/* =============================================================================
+   Tables
+   ========================================================================== */
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
+/* ==|== primary styles =====================================================
+   Author: SDM
+   ========================================================================== */
+
+/****************************************
+
+Basics             
+
+*****************************************/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	height: 100%; /* needed for sticky footer */
+}
+
+body {
+	background-color: #3C4448;
+	color: inherit;
+    font-family: calibri, verdana, helvetica, sans-serif;
+	text-align: left;
+}
+
+/* opera fix */ /* needed for sticky footer */
+body: before {
+	content: "";
+	height: 100%;
+	float: left;
+	width: 0;
+	margin-top: -32767px;
+}
+
+/****************************************
+
+Links           
+
+*****************************************/
+
+a:link, a:visited {	
+    font-weight: bold;
+	color: #000000;
+	background-color: inherit;
+    text-decoration: none;
+}
+
+a:hover, a:active {
+	font-weight: bold;
+	color: #789F00;
+	background-color: inherit;
+    text-decoration: none;
+}
+
+a.white:link, a.white:visited {	
+    font-weight: bold;
+	color: #FFFFFF;
+	background-color: inherit;
+    text-decoration: none;
+}
+
+a.white:hover, a.white:active {
+	font-weight: bold;
+	color: #95C721;
+	background-color: inherit;
+    text-decoration: none;
+}
+
+/* see personalize login/logout for example */
+a.special:link, a.special:visited {	
+    font-weight: bold;
+	color: #333;
+	background-color: inherit;
+    text-decoration: underline;
+}
+
+a.special:hover, a.special:active {
+	font-weight: bold;
+	color: #26A3DE;
+	background-color: inherit;
+    text-decoration: none;
+}
+
+/* see signup page video links for example */
+a.highlight:link, a.highlight:visited {	
+    font-weight: normal;
+	color: #B00000;
+	background-color: inherit;
+    text-decoration: none;
+}
+
+a.highlight:hover, a.highlight:active {
+	font-weight: normal;
+	color: #000000;
+	background-color: inherit;
+    text-decoration: none;
+}
+
+/* see member area page for example */
+a.company-create-join:link, a.company-create-join:visited {	
+   	color: #728722;
+	background-color: inherit;
+    text-decoration: none;
+	display: block;
+}
+
+a.company-create-join:hover, a.company-create-join:active {
+	color: #99BF45;
+	background-color: inherit;
+    text-decoration: none;
+	display: block;
+}
+
+/****************************************
+
+Styles and Formats
+
+*****************************************/
+
+p {
+	padding-bottom: 15px;
+}
+
+/* used for paragraphs that are sub-sections */
+.sub-section {
+	padding-left: 15px;
+}
+
+/* used for paragraphs that provide little bits of helpful info */
+.notes {
+	padding-bottom: 0px;
+}
+
+/* used for paragraphs that describe things */
+.general-description {
+	width: 450px;
+	padding-left: 30px;
+	padding-bottom: 30px;
+}
+
+/* used for paragraphs that contain certain links */
+.video-links {
+	font-size: 0.92em;
+	text-align: center;
+	padding-right: 0px;
+	padding-bottom: 0px;
+}
+
+/* don't forget the specific heading classes further down (in various sections) */
+h1 {
+    background-color: inherit;
+	color: #333;
+	font-size: 1.50em;
+	text-decoration: none;
+	padding-bottom: 20px;
+}
+
+/* used for the heading on each indivdual lot page */
+h1.lot-title, h1.rfq-title {
+	background-color: #15659C;
+	color: #FFFFFF;
+	border: 2px solid #3C4448;
+	font-size: 24px;
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 8px;
+	margin-bottom: 2px;
+}
+
+/* used for the heading on pages containing helpful/extra info */
+h1.helpful-info-title {
+	text-align: center;
+	padding-bottom: 5px;
+}
+
+/* used for the heading on pages containing helpful/extra info */
+h1.post-rfq-title {
+	padding-bottom: 5px;
+}
+
+#pricing-settings {
+	background-color: inherit;
+	color: #94C720;
+	font-size: 1.8em;
+	font-weight: bold;
+	float: right;
+	clear: right;
+	padding-right: 70px;
+  	padding-top: 40px;
+}
+
+h2 {
+	background-color: inherit;
+	color: #1371AB;
+	font-size: 1.20em;
+	text-decoration: none;
+	padding-bottom: 10px;
+}
+
+/* used for the sub-headings on each indivdual lot page */
+h2#picture-subtitle {
+	background: transparent url(../images/lot_inventory/lot_picture.png) 0 0 no-repeat;
+	color: #333;
+	font-size: 18px;
+	font-weight: bold;
+	width: 90px;
+	position: absolute;
+	margin: 7px;
+	padding-left: 27px;
+	padding-top: 2px;
+}
+
+h2#description-subtitle, h2#notes-subtitle {
+	background: transparent url(../images/lot_inventory/lot_description.png) 0 0 no-repeat;
+	color: #333;
+	font-size: 18px;
+	font-weight: bold;
+	margin: 7px;
+	padding-left: 29px;
+	padding-top: 3px;
+	padding-bottom: 8px;
+}
+
+h2#attachment-subtitle {
+	background: transparent url(../images/lot_inventory/lot_attachment.png) 0 0 no-repeat;
+	color: #333;
+	font-size: 18px;
+	font-weight: bold;
+	margin: 7px;
+	padding-left: 30px;
+	padding-top: 2px;
+}
+
+h2#question-subtitle {
+	background: transparent url(../images/lot_inventory/ask_question.png) 0 0 no-repeat;
+	color: #333;
+	font-size: 18px;
+	font-weight: bold;
+	margin: 7px;
+	padding-left: 30px;
+	padding-top: 3px;
+}
+
+h2#delivery-subtitle {
+	background: transparent url(../images/lot_inventory/delivery_instructions.png) 0 0 no-repeat;
+	color: #333;
+	font-size: 18px;
+	font-weight: bold;
+	margin: 7px;
+	padding-left: 30px;
+	padding-top: 3px;
+}
+
+/* used for the sub-headings on pages containing helpful/extra info */
+h2.helpful-info-sub {
+	background-color: inherit;
+	color: #333;
+	font-size: 1.05em;
+	font-weight: bold;
+	text-align: center;
+	padding-bottom: 30px;
+}
+
+h2.helpful-info-sub2 {
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+h2.post-rfq-sub {
+	background-color: inherit;
+	color: #333;
+	font-size: 1.05em;
+	font-weight: bold;
+	padding-bottom: 30px;
+}
+
+/* used for the sub-headings for the lists on the signup page */
+h2.signup-info {
+	text-align: center;
+	padding-top: 25px;
+}
+
+h3 {
+   	background-color: inherit;
+	color: #000000;
+	font-size: 1.0em;
+	font-weight: bold;
+	text-decoration: none;
+	padding-bottom: 5px;
+}
+
+/* used for each individual search result */
+h3.search-title {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+/* used for the title and number of comments in quip */
+h3.number-comments {
+	background-color: inherit;
+	color: #22568B;
+	font-size: 0.80em;
+	padding-top: 5px;
+	margin-left: 6px;
+}
+
+/* used for the sub-headings in forms that provide extra info via radio/checkbox inputs */
+h3.form-extras {
+	background-color: inherit;
+	color: #215D99;
+	font-size: 14px;
+	padding-bottom: 4px;
+}
+
+h4 {
+	background-color: inherit;
+	color: #000000;
+	font-size: 1.0em;
+	text-decoration: none;
+	padding-bottom: 2px;
+}
+
+h5 {
+	background-color: inherit;
+	color: #000000;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-weight: bold;
+	font-size: 1.0em;
+	text-decoration: none;
+	padding: 5px;
+}
+
+.hr {
+	border-top: 2px solid #C9DE55;
+	width: 100%;
+	display: block;
+	position: relative;
+	clear: both;
+	margin: 0 auto;
+	padding-bottom: 18px;
+}
+
+/* used for specific emphasis */
+.logged-name {
+	background-color: inherit;
+	color: #26A3DE;
+	font-weight: bold;
+}
+
+.pipe {
+	background-color: inherit;
+	color: #26A3DE;
+}
+
+.grid {
+	background-color: inherit;
+	color: #8CBE1F;
+}
+
+/* used for general emphasis */
+.advisory {
+	background-color: inherit;
+	color: #B00000;
+	font-weight: bold;
+}
+
+.important {
+	font-weight: bold;
+}
+
+.important-info {
+	background-color: inherit;
+	color: #000000;
+	font-weight: bold;
+	padding-bottom: 15px;
+}
+
+.linkedin-info {
+	background: transparent url(../images/general/linkedin_icon.png) 0 0 no-repeat;
+	color: #000000;
+	font-weight: bold;
+	padding-left: 18px;
+	padding-bottom: 15px;
+}
+
+.twitter-info {
+	background: transparent url(../images/general/twitter_icon.png) 0 0 no-repeat;
+	color: #000000;
+	font-weight: bold;
+	padding-left: 18px;
+	padding-bottom: 15px;
+}
+
+.member-details {
+	background-color: inherit;
+	color: #666;
+	font-weight: bold;
+	font-size: 0.85em;
+	padding-left: 15px;
+}
+
+.minor-details {
+	background-color: inherit;
+	color: #666;
+	font-size: 0.75em;
+	display: block;
+	padding-bottom: 5px;
+}
+
+.important-details {
+	background-color: inherit;
+	color: #B00000;
+	font-size: 0.75em;
+	padding-bottom: 0px;
+}
+
+/* used for basic graphics and photos for content filler and extra emphasis */
+.graphics-inline {
+	border: 2px solid #000000;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 10px;
+}
+
+.graphics-top {
+	margin-bottom: 40px;
+}
+
+.graphics-left {
+	border: 2px solid #000000;
+	float: left;
+	clear: left;
+	margin-right: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.graphics-right {
+	border: 2px solid #000000;
+	float: right;
+	clear: right;
+	margin-left: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.pics-left {
+	border: 5px solid #000000;
+	float: left;
+	clear: left;
+	margin-right: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.pics-right {
+	border: 3px solid #000000;
+	float: right;
+	clear: right;
+	margin-left: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+/* used inconjunction with JQUERY to hide/show various elements */
+.hide {
+	display: none;
+	padding-top: 5px;
+	padding-bottom: 10px;
+}
+
+/****************************************
+
+Lists
+
+*****************************************/
+
+/* PRIMARY SITE MENU (located in content/branding) - css is further down in the JQUERY dropdowns section */
+
+/* BACKUP SITE MENU (located in content-bottom) - basics for ul, li, and a */
+#backup-navigation {
+	padding-top: 15px;
+	padding-bottom: 35px;
+}
+
+#backup-navigation li {
+	display: inline;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+ 
+#backup-navigation li a {
+    background-color: inherit;
+   	color: #26A3DE;
+	text-decoration: none;
+}
+
+/* states */
+#backup-navigation li a:visited {
+	background-color: inherit;
+    color: #26A3DE;
+	text-decoration: none;
+}
+
+#backup-navigation li a:hover, #backup-navigation li a:active {
+	background-color: inherit;
+    color: #95C721;
+	text-decoration: none;
+}
+
+/* VARIOUS LISTS - basics for ul, li, and a */
+.general-info-list {
+	padding-top: 10px;
+	padding-left: 15px;
+	padding-right: 40px;	
+}
+
+.signup-info-list {
+	background-color: #FCFFD7;
+	border-top: 1px solid #1371AB;
+	border-bottom: 1px solid #1371AB;
+	padding-top: 25px;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-bottom: 15px;
+	margin-bottom: 5px;
+}
+
+.helpful-links-list {
+	width: 450px;
+	padding-left: 60px;
+}
+
+.requests-list {
+	width: 275px;
+	padding-left: 40px;
+	padding-bottom: 25px;
+}
+
+.general-info-list li, .signup-info-list li, .helpful-links-list li, .requests-list li {
+	background: transparent url(../images/general/info_icon.png) 0 0 no-repeat;
+	color: inherit;
+	border-bottom: 1px dotted #CCC;
+	padding-left: 20px;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}
+
+.general-info-list li a, .helpful-links-list li a, .requests-list li a {
+    color: #000000;
+	background-color: inherit;
+	text-decoration: none;
+}
+
+/* states */
+.general-info-list li a:visited, .helpful-links-list li a:visited, .requests-list li a:visited {
+    color: #000000;
+	background-color: inherit;
+    text-decoration: none;
+}
+
+.general-info-list li a:hover, .helpful-links-list li a:hover, .requests-list li a:hover, .general-info-list li a:active, .helpful-links-list li a:active, .requests-list li a:active {
+	color: #789F00;
+	background-color: inherit;
+    text-decoration: none;
+}
+
+/* MEMBER DETAILS/MEMBER TASKS - basics for ul, li */
+/* uses default links css for all a's */
+.member-personal, .member-company {
+	font-size: 0.91em;
+	float: left;
+	padding-right: 20px;
+}
+
+.member-personal li, .member-company li {
+	padding-bottom: 3px;
+}
+
+.member-tasks {
+	width: 220px;
+	line-height: 1.4;
+	float: right;
+	margin-top: 20px;
+}
+
+.company-tasks {
+	width: 240px;
+	line-height: 1.4;
+	position: absolute;
+	right: 40px;
+	margin-top: 130px;
+	z-index: 5;
+}
+
+.misc-tasks {
+	width: 360px;
+	line-height: 1.4;
+	float: right;
+	margin-top: 20px;
+}
+
+.member-tasks li, .company-tasks li, .misc-tasks li {
+	padding-bottom: 12px;
+}
+
+.member-tasks li a , .company-tasks li a, .misc-tasks li a {
+	background: transparent url(../images/general/tasks_icon.png) 0 0 no-repeat;
+	color: #000000;
+	height: 13px;
+	padding-left: 50px;
+	padding-bottom: 16px;
+	padding-top: 5px;
+}
+
+/* states */
+.member-tasks li a:visited, .company-tasks li a:visited, .misc-tasks li a:visited {
+	color: #000000;
+	background-color: inherit;
+    text-decoration: none;
+}
+
+.member-tasks li a:hover, .member-tasks li a:active, .company-tasks li a:hover, .company-tasks li a:active, .misc-tasks li a:hover, .misc-tasks li a:active  {
+	color: #789F00;
+	background-color: inherit;
+    text-decoration: none;
+}
+
+/* used to add space to certain items via spans in the above lists */
+.member-country {
+	display: block;
+	padding-bottom: 18px;
+}
+
+.member-address {
+	padding-right: 10px;
+}
+
+.company-other {
+	padding-left: 10px;
+}
+
+/* GENERAL TOOLS FOR PROFILES, LOTS, ETC - basics for ul, li, and a */
+.general-tools {
+	width: 840px;
+	margin: 0 auto;
+}
+
+.general-tools-small {
+	width: 560px;
+	margin: 0 auto;
+}
+
+.general-tools li, .general-tools-small li {
+	float: left;
+	display: inline;
+}
+
+.general-tools li a, .general-tools-small li a {
+	background: transparent url(../images/general/tools_sprite.png) 0 0 no-repeat;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 16px;
+	text-decoration: none;
+	height: 37px;
+	width: 252px;
+	display: block;
+	padding-top: 16px;
+	margin-left: 14px;
+	margin-right: 14px;
+	margin-bottom: 8px;
+}
+
+/* used on the submit lot pages, rfq pages, etc */
+.general-tools #submit-pictures a, .general-tools-small #submit-pictures a {
+	background: transparent url(../images/general/submit_picture.png) 0 0 no-repeat;
+	margin-bottom: 20px;
+}
+
+.general-tools #submit-descriptions a, .general-tools-small #submit-descriptions a {
+	background: transparent url(../images/general/submit_description.png) 0 0 no-repeat;
+	margin-bottom: 20px;
+}
+
+.general-tools #submit-attachments a, .general-tools-small #submit-attachments a {
+	background: transparent url(../images/general/submit_attachment.png) 0 0 no-repeat;
+	margin-bottom: 20px;
+}
+
+/* used on the pages needing login/signup buttons, etc */
+.general-tools #member-login a, .general-tools-small #member-login a {
+	background: transparent url(../images/general/login_sprite.png) 0 0 no-repeat;
+	font-size: 18px;
+	width: 200px;
+	margin-left: 66px;
+}
+
+.general-tools #guest-signup a, .general-tools-small #guest-signup a {
+	background: transparent url(../images/general/signup_sprite.png) 0 0 no-repeat;
+	width: 200px;
+}
+
+/* states */
+.general-tools li a:visited, .general-tools #submit-pictures a:visited, .general-tools #submit-descriptions a:visited, .general-tools #submit-attachments a:visited,             .general-tools #member-login a:visited, .general-tools #guest-signup a:visited,             .general-tools-small li a:visited, .general-tools-small #submit-pictures-a:visited, .general-tools-small #submit-descriptions a:visited, .general-tools-small #submit-attachments a:visited,          .general-tools-small #member-login a:visited, .general-tools-small #guest-signup a:visited {
+	color: #FFFFFF;
+	background-position: 0px 0px;
+    text-decoration: none;
+}
+
+.general-tools li a:hover, .general-tools li a:active, .general-tools #submit-pictures a:hover, .general-tools li #submit-pictures a:active, .general-tools #submit-descriptions a:hover, .general-tools #submit-descriptions a:active, .general-tools #submit-attachments a:hover, .general-tools #submit-attachments a:active,       .general-tools #member-login a:hover, .general-tools li #member-login a:active, .general-tools #guest-signup a:hover, .general-tools #guest-signup a:active,        .general-tools-small li a:hover, .general-tools-small li a:active, .general-tools-small #submit-pictures a:hover, .general-tools-small li #submit-pictures a:active, .general-tools-small #submit-descriptions a:hover, .general-tools-small #submit-descriptions a:active, .general-tools-small #submit-attachments a:hover, .general-tools-small #submit-attachments a:active,         .general-tools-small #member-login a:hover, .general-tools-small #member-login a:active, .general-tools-small #guest-signup a:hover, .general-tools-small #guest-signup a:active {
+	color: #95C721;
+	background-position: 0px -53px;
+    text-decoration: none;
+}
+
+/* HELPFUL INFO - basics for ul, li, and a */
+.helpful-info {
+   	text-align: justify;
+	list-style-type: upper-roman;
+	padding-left: 80px;
+	padding-right: 80px;
+}
+
+.helpful-info li {
+	padding-bottom: 10px;
+}
+ 
+.helpful-info li a {
+	text-decoration: none;
+}
+
+/* COMPANY CONTACTS - basics for ul, li, and a */
+.member-contacts {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 0.80em;
+	padding-top: 5px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+}
+
+.member-contacts li {
+	display: inline;
+	padding-left: 15px;
+	padding-right: 15px;	
+}
+
+.member-contacts li a {
+	text-decoration: none;
+}
+
+/* EXTRA POST FOR LOT AND RFQ - basics for ul, li, and a */
+.extra-post {
+	float: right;
+}
+
+.extra-post li {
+	margin-top: 10px;
+	margin-right: 20px;
+}
+
+.extra-post li a {
+	background: transparent url(../images/general/post_sprite.png) 0 0 no-repeat;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 16px;
+	text-decoration: none;
+	height: 28px;
+	width: 150px;
+	display: block;
+	padding-top: 6px;
+}
+
+/* states */
+.extra-post li a:visited {
+	color: #FFFFFF;
+	background-position: 0px 0px;
+    text-decoration: none;
+}
+
+.extra-post li a:hover, .extra-post li a:active {
+	color: #95C721;
+	background-position: 0px -34px;
+    text-decoration: none;
+}
+
+/* TOS/PP - basics for ul, li, and a */
+.tos_privacy {
+   	list-style-type: square;
+	padding-left: 32px;
+}
+
+.tos_privacy li {
+	padding-bottom: 7px;
+}
+ 
+.tos_privacy li a {
+	color: #797979;
+	background-color: inherit;
+	text-decoration: none;
+}
+
+.tos_privacy2 {
+   	list-style-type: circle;
+    padding-top: 15px;
+	padding-left: 60px;
+	padding-right: 50px;
+}
+
+/* single item list for the back arrow icon */
+.back {
+	float: left;
+	clear: left;
+	margin-top: 9px;
+}
+
+.back li {
+	display: inline;
+}
+
+.back li a {
+	background: transparent url(../images/general/back_arrow.png) 0 0 no-repeat;
+	color: #000000;
+	text-decoration: none;
+	height: 21px;
+	display: block;
+	padding-left: 33px;
+	padding-top: 1px;
+}
+
+/* states */
+.back li a:visited {
+  	color: #000000;
+	background-color: inherit;
+    text-decoration: none;
+}
+
+.back li a:hover, .back li a:active {
+	color: #789F00;
+	background-color: inherit;
+    text-decoration: none;
+}
+
+/****************************************
+
+Containers
+
+*****************************************/
+
+/* primary container (needed for sticky footer) */
+#container {
+	min-height: 100%; /* needed for sticky footer */
+}
+
+/* header container (nested in the primary container) */
+#header {
+	background: transparent url(../images/containers/feedback_advertise.png) 0 0 repeat-x;
+	color: #FFFFFF;
+	font-size: 14px;
+	height: 23px;
+	width: 100%;
+	position: relative; /* needed for the internal absolute positioned elements */
+	margin-bottom: -3px; /* needed to pull the branding area bg up under this top bar */
+	z-index: 1; /* needed for the neg margin */
+}
+
+/* main content container (nested in the primary container) */
+#content {
+	background: transparent url(../images/containers/content_middle.png) 0 0 repeat-y;
+	color: #666;
+	font-size: 1.0em;
+	width: 970px;
+	position: relative; /* needed for internal absolute positioned elements */
+    overflow: hidden; /* extends the bg of this div (that has no content) to match the internal div's (that are floated) heights */
+	margin: 0 auto;
+	z-index: 0; /* needed for the header neg margin */
+	padding-bottom: 30px;
+}
+
+/* second content container (nested in the primary container & needed for sticky footer) */
+#content-bottom {
+	background: transparent url(../images/containers/content_bottom.png) center top no-repeat;
+	color: #FFFFFF;
+	font-size: 16px;
+	text-align: center; /* needed to center the backup menu */
+	width: 970px;
+	overflow: auto; /* needed for sticky footer */
+	margin: 0 auto;
+	padding-bottom: 23px;  /* must be same height as the footer */ /* needed for sticky footer */
+	padding-top: 93px; /* needed for the center top bg image */
+	z-index: 0;
+}
+
+/* primary & footer container (needed for sticky footer) */
+#footer {
+	background: transparent url(../images/containers/site_info.png) 0 0 repeat-x;
+	color: #FFFFFF;
+	font-size: 14px;
+	text-align: center;
+	height: 23px; /* needed for sticky footer */
+	width: 100%;
+	position: relative;  /* needed for sticky footer */
+	clear: both; /* needed for sticky footer */
+	margin-top: -23px; /* negative value of footer height */ /* needed for sticky footer */
+}
+
+/****************************************
+
+Header
+
+*****************************************/
+
+/* single item list for the feedback icon */
+#feedback {
+	position: absolute;
+	top: 0px;
+    left: 50%;
+	margin-left: -475px;
+}
+
+#feedback li {
+	display: inline;
+}
+
+#feedback li a {
+	background: transparent url(../images/header/feedback.png) 0 0 no-repeat;
+	color: #FFFFFF;
+	text-decoration: none;
+	height: 23px;
+	display: block;
+	padding-left: 32px;
+	padding-top: 3px;
+}
+
+/* single item list for the newsletter icon */
+#newsletter {
+	position: absolute;
+	top: 0px;
+    left: 50%;
+	margin-left: -310px;
+}
+
+#newsletter li {
+	display: inline;
+}
+
+#newsletter li a {
+	background: transparent url(../images/header/newsletter.png) 0 0 no-repeat;
+	color: #FFFFFF;
+	text-decoration: none;
+	height: 23px;
+	display: block;
+	padding-left: 28px;
+	padding-top: 3px;
+}
+
+/* single item list for the advertise icon */
+#advertise {
+	position: absolute;
+	top: 0px;
+	left: 50%;
+	margin-left: 188px;
+}
+
+#advertise li {
+	display: inline;
+}
+
+#advertise li a {
+	background: transparent url(../images/header/advertise.png) 0 0 no-repeat;
+	color: #FFFFFF;
+	text-decoration: none;
+	height: 23px;
+	display: block;
+	padding-left: 28px;
+	padding-top: 3px;
+}
+
+/* following 3 are for the advertising page, located in the header */
+
+/* message for advertising options */
+#ad-message {
+	background-color: inherit;
+	color: #94C720;
+	border: 2px solid #1371AB;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px; 
+	font-size: 1.30em;
+	font-weight: bold;
+	text-align: center;
+	width: 600px;
+	padding: 15px;
+	margin: 0 auto;
+	margin-bottom: 30px;
+}
+
+/* columns for advertising options */
+.ad-options {
+	border: 2px solid #1371AB;
+	-webkit-border-radius: 18px;
+	-moz-border-radius: 18px;
+	border-radius: 18px; 
+	width: 186px;
+	float: left;
+	margin-left: 5px;
+	margin-right: 5px;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+/* Ad Details - basics for ul, li, and a */
+.ad-details {
+   	list-style-type: square;
+	padding-left: 32px;
+}
+
+.ad-details  li {
+	padding-bottom: 7px;
+}
+ 
+.ad-details  li a {
+	color: #797979;
+	background-color: inherit;
+	text-decoration: none;
+}
+
+/* single item list for the integrate icon */
+#integrate {
+	position: absolute;
+	top: 0px;
+	left: 50%;
+	margin-left: 300px;
+}
+
+#integrate li {
+	display: inline;
+}
+
+#integrate li a {
+	background: transparent url(../images/header/integrate.png) 0 0 no-repeat;
+	color: #FFFFFF;
+	text-decoration: none;
+	height: 23px;
+	display: block;
+	padding-left: 33px;
+	padding-top: 3px;
+}
+
+/* states for the above 3 */
+#feedback li a:visited, #newsletter li a:visited, #advertise li a:visited, #integrate li a:visited {
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: inherit;
+    text-decoration: none;
+}
+
+#feedback li a:hover, #feedback li a:active, #newsletter li a:hover, #newsletter li a:active, #advertise li a:hover, #advertise li a:active, #integrate li a:hover, #integrate li a:active {
+	font-weight: bold;
+	color: #95C721;
+	background-color: inherit;
+    text-decoration: none;
+}
+
+/****************************************
+
+Main
+
+*****************************************/
+
+/* houses title, slogan, logo, social bookmarking & menu (see the section for the JQUERY dropdown further down for the menu css) */
+#branding {
+	background: transparent url(../images/main/branding.png) 0 0 no-repeat;
+    color: inherit;
+	width: 936px;
+	height: 185px;
+	margin-left: 16px;
+}
+
+#title-slogan {
+	position: relative;
+	float: left;
+	clear: left;
+	top: 2px;
+   	left: 20px;
+}
+
+#logo {
+	position: relative;
+	float: right;	
+	clear: right;
+	top: 8px;
+    right: 8px;
+}
+
+.social-bookmarking {
+	position: absolute;
+	width: 125px;
+	top: 161px;
+   	right: 18px;
+}
+
+/* container for the drop down menu */
+#nav {
+	position: absolute;
+	height: 38px;
+	top: 147px;
+	left: 16px;
+}
+
+/* houses the dynamically generated member count */
+.messages {
+	background: transparent url(../images/main/members.png) 0 0 no-repeat;
+	color: #333;
+	font-size: 0.95em;
+	height: 18px;
+	float: left;
+	clear: left;
+	padding-top: 1px;
+	padding-left: 20px;
+	margin-left: 23px;
+	margin-top: 5px;
+}
+
+/* houses the dynamically generated members/guests logged status */
+.statuses {
+	background: transparent url(../images/main/logged.png) 0 0 no-repeat;
+	color: #333;
+	font-size: 0.95em;
+	height: 18px;
+	float: right;
+	clear: right;
+    padding-top: 0px;
+    padding-left: 20px;
+	margin-right: 23px;
+	margin-top: 5px;
+}
+
+/* houses all the main sections inside content but below branding, message, status */
+.main {
+	width: 880px;
+	position: relative; /* needed for the internal absolute positioned elements */
+	float: left;
+	clear: both;
+	padding-left: 45px;	
+	padding-right: 45px;
+	padding-top: 40px;
+}
+
+.main-left {
+	width: 415px;
+	float: left;
+	clear: left;
+	padding-right: 50px;
+}
+
+.main-right {
+	width: 415px;
+	float: right;
+	clear: right;
+	padding-right: 0px;
+}
+
+/* single item list for the join icon */
+#join {
+	float: right;	
+	clear: right;
+}
+
+#join li {
+	display: inline;
+}
+
+#join li a {
+	background: transparent url(../images/main/join.png) 0 0 no-repeat;
+	color: #000000;
+	text-decoration: none;
+	height: 24px;
+	display: block;
+	padding-left: 27px;
+	padding-top: 2px;
+}
+
+/* states */
+#join li a:visited {
+	font-weight: bold;
+	color: #000000;
+	background-color: inherit;
+    text-decoration: none;
+}
+
+#join li a:hover, #join li a:active {
+	font-weight: bold;
+	color: #789F00;
+	background-color: inherit;
+    text-decoration: none;
+}
+
+.video-description {
+	background: transparent url(../images/main/arrow.png) bottom right no-repeat;
+	color: #999999;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 35px;
+	height: 160px;
+	float: left;
+	clear: left;
+	padding-top: 45px;
+}
+
+.video-frame {
+	background: transparent url(../images/main/video_frame.png) 0 0 no-repeat;
+	height: 240px;
+	width: 431px;
+    float: right;
+	clear: right;
+	padding: 21px;
+}
+
+/****************************************
+
+Footer
+
+*****************************************/
+
+#legal-info {
+	float: left;
+	clear: left;
+	padding-left: 20px;
+	padding-top: 6px;
+}
+
+#copyright {
+	position: relative;
+    top: 6px;
+}
+
+#site-designer {
+	float: right;
+	clear: right;
+	padding-right: 20px;
+	padding-top: 6px;
+}
+
+/****************************************
+
+Forms
+
+*****************************************/
+
+/* default settings for all forms */
+fieldset {
+	color: inherit;
+	background-color: #E0E3ED;
+	border: 1px solid #9EB0CB;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px; 
+	padding: 10px;
+}
+
+legend {
+	background: transparent url(../images/general/legend_heading.png) 0 0 repeat-x;
+	color: #FFFFFF;
+   	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px; 
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+	height: 23px;
+	padding-top: 5px;
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
+label {
+	display: block;
+}
+
+.label-inline {
+	display: inline;
+}
+
+/* labels wrap the forms fields so we can align them horizontally */
+.label-search, .label-submission {
+	font-size: 15px;
+	float: left;
+	display: block;
+	margin-right: 15px;
+	margin-bottom: 10px;
+}
+
+input, select, textarea {
+	background-color: #FFFFFF;    
+ 	color: inherit;
+	border: 1px solid #9EB0CB;
+    -webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px; 
+	font-size: 12px;
+	line-height: 1.1;
+	width: 260px;
+	display: block;
+	padding: 2px;
+	margin-bottom: 5px;
+}
+
+.input-inline {
+	border: 0;
+	width: 15px;
+	display: inline;
+	padding: 0px;
+	margin: 0px;
+	margin-right: 5px;
+}
+
+/* search/submission forms fields */
+.input-search, .input-submission {
+	width: 135px;
+	margin-bottom: 0px;
+}
+
+.input-submission-date {
+	width: 95px;
+	margin-bottom: 0px;
+}
+
+.input-range {
+	width: 56px;
+	display: inline;
+	margin-bottom: 0px;
+}
+
+.input-option {
+	word-spacing: 9px;
+}
+
+textarea {
+	width: 460px;        
+    height: 200px;
+}
+
+.textarea-small {
+	width: 260px;        
+    height: 85px;
+}
+
+/* used for the register/update forms input, select, textarea */
+#companytype, #companyother {
+	width: 150px;
+}
+
+#country, #city, #website {
+	width: 180px;
+}
+
+#state, #phone, #fax {
+	width: 130px;
+}
+
+#zip {
+	width: 80px;
+}
+
+/* used with a div for a specific label/input that needs to stick-out */
+.site-disclaimer {
+	font-size: 12px;
+	width: 350px;
+	padding: 15px;
+}
+
+/* used for paragraphs that contain form related info */
+.form-note {
+	background-color: inherit;
+	color: #000000;
+	font-size: 13px;
+	text-align: center;
+	display: block;
+	padding-top: 8px;
+	padding-bottom: 8px; 
+}
+
+/* submit button for all forms */
+.submit-button {
+  	background: transparent url(../images/general/button_sprite.png) 0 0 repeat-x;
+	color: #000000;
+   	border: 0;  /* needed to zero-out the default input setting */
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px; 
+	font-size: 15px;
+	font-weight: bold;
+	width: 117px;
+	height: 30px;
+    cursor: pointer;
+	float: right;
+	display: inline;  /* needed to zero-out the default input setting */
+	margin-top: 5px;
+	margin-bottom: 0px;  /* needed to zero-out the default input setting */
+	padding: 0px;  /* needed to zero-out the default input setting */
+}
+
+/* modified to fit certain buttons and used in conjunction with tha above button css */
+.submit-password {
+	width: 220px;
+}
+
+.submit-cancel {
+	margin-left: 20px;
+}
+
+.submit-upload {
+	float: left;
+	margin-bottom: 30px;
+}
+
+.submit-preview {
+	margin-right: 20px;
+}
+
+/* states */
+.submit-button:visited {
+	background-position: 0px 0px;
+}
+
+.submit-button:hover, .submit-button:active {
+  	background-position: 0px -31px;
+}
+
+/* used for highlighting important form elements */
+.warning {
+	color: #B00000;
+	background-color: inherit;
+}
+
+/* used for highlighting end-user input errors */
+/* over-rides default settings for most forms that use inline errors */
+.error {
+	color: #B00000;
+	background-color: inherit;
+	font-size: 12px;
+	font-weight: bold;
+	padding-left: 4px;
+	padding-bottom: 1px;
+}
+
+.error-block {
+	color: #B00000;
+	background-color: inherit;
+	font-size: 12px;
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+
+.error-special {
+	color: #B00000;
+	background-color: inherit;
+	font-size: 12px;
+	font-weight: bold;
+	display: block;
+	padding-left: 5px;
+	padding-bottom: 5px;
+}
+
+.success {
+	color: #090;
+	background-color: inherit;
+	font-size: 12px;
+	font-weight: bold;
+	padding-left: 4px;
+	padding-bottom: 1px;
+}
+
+.success-block {
+	color: #090;
+	background-color: inherit;
+	font-size: 12px;
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+
+/* used for extra spam protection */
+.office-phone {
+        display: none;
+}
+
+/* used for breaking-up certain form elements */
+.hr-form {
+	border-top: 1px solid #9EB0CB;
+	width: 100%;
+	display: block;
+	position: relative;
+	clear: both;
+	margin-top: 15px;
+	padding-bottom: 5px;
+}
+
+/* used for general form sizing/positioning */
+.form-left {
+	width: 420px;
+	float: left;
+	clear: left;
+}
+
+.form-right {
+	width: 420px;
+	float: right;
+	clear: right;
+}
+
+.form-mini-left {
+	font-size: 16px;
+	width: 200px;
+	float: left;
+	margin-bottom: 10px;
+}
+
+.form-mini-right {
+	font-size: 16px;
+	width: 220px;
+	float: left;
+	margin-bottom: 10px;
+}
+
+/* used for specific form sizing/positioning */
+.form-feedback {
+	width: 480px;
+	height: 315px;
+	padding: 10px;
+}
+
+.form-newsletter {
+	width: 395px;
+	height: 180px;
+	padding: 10px;
+}
+
+.form-advertising {
+	width: 500px;
+	height: 442px;
+	padding: 10px;
+}
+
+.form-size {
+	width: 300px;
+	height: 150px;
+	padding: 10px;
+}
+
+.form-register, .form-search {
+	width: 880px;
+	float: left;
+	clear: both;
+}
+
+.form-login-member {
+	width: 380px;
+	float: left;
+	clear: left;
+	margin-bottom: 20px;
+}
+
+#login-member {
+	background: transparent url(../images/main/login_member.png) top no-repeat;
+	color: inherit;
+	text-indent: -99999px;
+	height: 96px;
+	width: 326px;
+	float: left;
+	clear: left;
+	display: block;
+	margin-top: 20px;
+	margin-left: 40px;
+	margin-bottom: 60px;
+}
+
+#login-member:hover {
+	background: transparent url(../images/main/login_member.png) bottom no-repeat;
+}
+
+.form-login-company {
+	width: 380px;
+	float: right;
+	clear: right;
+	margin-bottom: 20px;
+}
+
+#login-company {
+	background: transparent url(../images/main/login_company.png) top no-repeat;
+	color: inherit;
+	text-indent: -99999px;
+	height: 96px;
+	width: 354px;
+	float: right;
+	clear: right;
+	display: block;
+	margin-top: 25px;
+	margin-right: 40px;
+	margin-bottom: 60px;
+}
+
+#login-company:hover {
+	background: transparent url(../images/main/login_company.png) bottom no-repeat;
+}
+
+/* special link inside search forms */
+.missing-size {
+	font-size: 12px;
+	padding-left: 10px;
+}
+
+/* used to postion the links/notes below the login forms (not a form) */
+#login-notes {
+	float: left;
+	clear: left;
+}
+
+.form-update {
+	width: 400px;
+	float: left;
+	clear: left;
+}
+
+.form-password {
+	width: 375px;
+	float: left;
+	clear: left;
+}
+
+.form-contact {
+	width: 485px;
+	float: left;
+	clear: left;
+}
+
+.form-seller {
+	width: 500px;
+	height: 457px;
+	padding: 10px;
+}
+
+.form-lots, .form-rfqs {
+	width: 500px;
+	height: 500px;
+	padding: 10px;
+}
+
+.form-descriptions {
+	width: 440px;
+	margin-bottom: 5px;
+}
+
+.form-invitations {
+	width: 288px;
+	height: 410px;
+	float: left;
+	clear: left;
+}
+
+.form-message {
+	width: 500px;
+	height: 591px;
+	padding: 10px;
+}
+
+/* used with search forms and/or submission forms */
+/* used to help properly layout the horizontally aligned form fields (also used with the JQUERY hide/show) */
+.form-tooltips {
+	border-left: 1px solid #9EB0CB;
+	border-bottom: 1px solid #9EB0CB;
+	font-size: 14px;
+	float: right;
+	clear: right;
+	padding-left: 4px;
+	padding-bottom: 2px;
+}
+
+.terms-general-tabbed, .terms-new-pipe, .terms-used-pipe, .terms-grade1-pipe, .terms-grade2-pipe, .terms-grade3-pipe, .terms-grade4-pipe, .terms-grade5-pipe, .terms-grade6-pipe, .terms-new-casing, .terms-used-casing, .terms-new-tubing, .terms-used-tubing {
+	width: 828px;
+	float: left;
+	clear: left;
+	padding-bottom: 5px;
+}
+
+.terms-general-notab, .terms-new-notab, .terms-used-notab, terms-grade1-notab, .terms-grade2-notab, .terms-grade3-notab, .terms-grade4-notab, .terms-grade5-notab, .terms-grade6-notab {
+	width: 858px;
+	float: left;
+	clear: left;
+	padding-bottom: 5px;
+}
+
+/* search_results chunk */
+.search-results {
+	background-color: inherit;
+	color: #999;
+	font-size: 0.92em;
+}
+
+.search-paging0 {
+	background-color: inherit;
+	color: #B00000;
+	font-weight: bold;
+	font-size: 0.93em;
+	padding-top: 10px;
+}
+
+.search-results-list {
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+.search-highlight {
+	background-color: #FF0;
+	color: #000;
+	font-weight: bold;
+	padding-bottom: 3px;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+/* search_result chunk */
+.search-result {
+	
+}
+
+/* search_content chunk */
+.search-content {
+	padding-left: 25px;
+	padding-right: 25px;
+	padding-bottom: 0px;
+}
+
+/* paging_0 chunk */
+.result-pages {
+	padding-right: 10px;
+}
+
+/* used with the quip/comment forms (located in the individual lot pages section) */
+
+/* tooltips used with various input boxes */
+/* made possible w/ the JQUERY tools ui library */
+.tooltip {
+	background-color: #FDFFD8;
+	color: #000000;
+	text-align: left;
+	font-size: 15px;
+	border: 1px solid #000;
+	-webkit-border-radius: 5px; 
+	-moz-border-radius: 5px; 
+	border-radius: 5px; 
+	-moz-background-clip: padding; 
+	-webkit-background-clip: padding-box; 
+	background-clip: padding-box;
+	-webkit-box-shadow: 0px 0px 8px #000; 
+	-moz-box-shadow: 0px 0px 8px #000; 
+	box-shadow: 0px 0px 8px #000; 
+	width: 250px;
+	display: none;
+	padding: 5px;
+}
+
+/* date picker input boxes */
+/* made possible w/ the JQUERY tools ui library */
+
+/* root element */
+#calroot {
+    background-color: #FFFFFF;
+    color: #000000;
+	font-size: 11px;
+	border: 1px solid #ccc;
+	-moz-border-radius: 5px;
+    -webkit-border-radius: 5 px;
+    -moz-box-shadow: 0 0 15px #666;
+    -webkit-box-shadow: 0 0 15px #666;
+	width: 198px;
+	margin-top: -1px;
+    padding: 2px;
+    z-index: 1000;
+}
+
+/* head */
+#calhead {
+    height: 22px;
+	padding: 2px 0;
+}
+
+#caltitle {
+    font-size: 14px;
+	text-align: center;
+    color: #225A95;
+	background-color: inherit;
+    line-height: 20px;
+    text-shadow: 0 1px 0 #ddd;
+	width: 155px;
+	float: left;
+}
+
+#calprev {
+    background: transparent url(../images/datepicker/prev.gif) no-repeat scroll center center;
+    width: 20px;
+    height: 20px;
+    float: left;
+    display: block;
+	cursor: pointer;
+}
+
+#calnext {
+    background: transparent url(../images/datepicker/next.gif) no-repeat scroll center center;
+    width: 20px;
+    height: 20px;
+    float: right;
+    display: block;
+	cursor: pointer;
+}
+
+#calprev.caldisabled, #calnext.caldisabled {
+    visibility: hidden;
+}
+
+/* year/month selector */
+#caltitle select {
+    font-size: 10px;
+}
+
+/* names of the days */
+#caldays {
+    height: 14px;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+#caldays span {
+    text-align: center;
+	width: 28px;
+	display: block;
+    float: left;
+}
+
+/* container for weeks */
+#calweeks {
+    background-color: #FFFFFF;
+    color: inherit;
+	margin-top: 4px;
+}
+
+/* single week */
+.calweek {
+    clear: left;
+    height: 22px;
+}
+
+/* single day */
+.calweek a {
+	background-color: inherit;
+	color: #666666;
+	text-decoration: none;
+    font-size: 11px;
+   	text-align: center;
+    line-height: 20px;
+    width: 27px;
+    height: 20px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+	display: block;
+    float: left;
+	margin-left: 1px;
+}
+
+/* different states */
+.calweek a:hover, .calfocus {
+    background-color: #E0E2EE;
+	color: inherit;
+}
+
+/* sunday */
+a.calsun {
+	background-color: inherit;
+	color: #B00000;
+}
+
+/* offmonth day */
+a.caloff {
+    background-color: inherit;
+	color: #CCCCCC;
+}
+
+a.caloff:hover {
+    background-color: rgb(245, 245, 250);
+	color: inherit;
+}
+
+/* unselecteble day */
+a.caldisabled {
+    background-color: #EFEFEF !important;
+    color: #CCCCCC !important;
+    cursor: default;
+}
+
+/* current day */
+#calcurrent {
+    background-color: #225A95;
+    color: #FFFFFF;
+}
+
+/* today */
+#caltoday {
+    background-color: #333333;
+    color: #FFFFFF;
+}
+
+/****************************************
+
+Table Layouts
+
+*****************************************/
+
+/* ALL tables */
+/* sorting is used on all tables and made possible w/ the JQUERY tablesorting script */
+
+/* table */
+.tablesorter {
+	border-bottom: 5px solid #3C4448;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 10px;
+	width: 880px;
+	margin-bottom: 5px;
+}
+
+/* table-override - used with the above to fit the members tables in the tabbed pages */
+.tablesorter-tabs {
+	width: 850px;
+}
+
+/* table-override - used with the above to give needed space under the recent tables on the search pages (not on home page)  */
+.tablesorter-recent {
+	margin-top: 30px;
+}
+
+/* caption */
+.tablesorter caption {
+	background-color: inherit;
+	color: #333;
+	font-size: 13px;
+	font-weight: bold;
+	padding-bottom: 4px;
+}
+
+/* column headings */
+.tablesorter th {
+	background-color: #96A5A9;
+	color: #FFFFFF;
+	border-top: 5px solid #3C4448;
+	border-bottom: 3px solid #3C4448;
+	border-left: 1px solid #3C4448;
+	border-right: 1px solid #3C4448;
+	font-weight: bold;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	padding-left: 2px;
+}
+
+/* column headings-override - used for columns that require sorting (JQUERY adds this on the fly) */
+.tablesorter thead tr .header {
+	background: #96A5A9 url(../images/lot_inventory/bg.gif) center right no-repeat;
+	cursor: pointer;
+}
+
+.tablesorter thead tr .headerSortUp {
+	background: #96A5A9 url(../images/lot_inventory/asc.gif) center right no-repeat;
+	cursor: pointer;
+}
+
+.tablesorter thead tr .headerSortDown {
+	background: #96A5A9 url(../images/lot_inventory/desc.gif) center right no-repeat;
+	cursor: pointer;
+}
+
+/* cells */
+.tablesorter tr td {
+	background-color: #E3E6EE;
+	color: inherit;
+	border-top: 1px solid #9EB0CB;
+	border-bottom: 1px solid #9EB0CB;
+	border-left: 1px solid #3C4448;
+	border-right: 1px solid #3C4448;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 2px;
+	overflow: hidden;
+}
+
+.tablesorter tr td.product {
+	min-width: 50px;
+	max-width: 50px;
+}
+
+.tablesorter tr td.condition {
+	min-width: 58px;
+	max-width: 58px;
+}
+
+.tablesorter tr td.feet {
+	min-width: 24px;
+	max-width: 110px;
+}
+
+.tablesorter tr td.od {
+	min-width: 20px;
+	max-width: 110px;
+}
+
+.tablesorter tr td.wt {
+	min-width: 20px;
+	max-width: 110px;
+}
+
+.tablesorter tr td.weight {
+	min-width: 84px;
+	max-width: 84px;
+}
+
+.tablesorter tr td.weld {
+	min-width: 50px;
+	max-width: 50px;
+}
+
+.tablesorter tr td.coating {
+	min-width: 68px;
+	max-width: 68px;
+}
+
+.tablesorter tr td.standard {
+	min-width: 56px;
+	max-width: 56px;
+}
+
+.tablesorter tr td.grade {
+	min-width: 41px;
+	max-width: 41px;
+}
+
+.tablesorter tr td.psl {
+	min-width: 32px;
+	max-width: 32px;
+}
+
+.tablesorter tr td.country_origin {
+	min-width: 98px;
+	max-width: 98px;
+}
+
+.tablesorter tr td.location {
+	min-width: 53px;
+	max-width: 110px;
+}
+
+.tablesorter tr td.price {
+	min-width: 37px;
+	max-width: 110px;
+}
+
+.tablesorter tr td.company {
+	min-width: 57px;
+	max-width: 110px;
+}
+
+.tablesorter tr td.issued-date {
+	min-width: 50px;
+	max-width: 60px;
+}
+
+.tablesorter tr td.due-date {
+	min-width: 50px;
+	max-width: 60px;
+}
+
+.tablesorter tr td.reference-number {
+	min-width: 50px;
+	max-width: 70px;
+}
+
+.tablesorter tr td.pics {
+	min-width: 24px;
+	max-width: 24px;
+	text-align: center;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+
+.tablesorter tr td.links {
+	min-width: 26px;
+	max-width: 26px;
+	text-align: center;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+
+/* alternative rows (JQUERY adds this on the fly) */
+.tablesorter tr.odd td {
+	background-color: #F7F8FB;
+	color: inherit;
+}
+
+/* row hover state (also used for alternative rows) */
+.tablesorter tr:hover td {
+	background-color: #F9D3D5;
+	color: #000000;
+	cursor: pointer;  /* needed to show that the whole row is clickable via JQUERY */
+}
+
+/* table-override - used with the above to kill the pointer cursor */
+.tablesorter-nolink tr:hover td {
+	background-color: #F9D3D5;
+	color: #000000;
+	cursor: auto;
+}
+
+/* tablesorter pagination contols (JQUERY tablesorting script plugin) */
+/* pagination is used for all tables (minus the recently posted) */
+#pipe-pager, #casing-pager, #tubing-pager, #directory-pager, #rfq-pager {
+	padding-left: 5px;
+}
+
+/* tablesorter pagination contols-override - used with the above to give needed space under the controls on the lot pages */
+.pager-lots {
+	margin-bottom: 20px;
+}
+
+.pager-fieldset {
+	background: inherit;
+	color: inherit;
+	border: none;
+	padding: 0px;
+	cursor: pointer;
+}
+
+.pagedisplay {
+	font-size: 13px;
+	line-height: 1.0;
+	width: 75px;
+	display: inline;
+	padding: 1px;
+	margin-bottom: 0px;
+}
+
+.pagesize {
+	font-size: 13px;
+	line-height: 1.0;
+	width: 45px;
+	display: inline;
+	padding: 1px;
+	margin-bottom: 0px;
+	cursor: pointer;
+}
+
+/****************************************
+
+Ad Layouts
+
+*****************************************/
+
+/* top ads (located in branding) */
+.top-banner {
+	position: absolute;
+	top: 25px;
+	left: 345px;
+}
+
+/* left ads (located outside of content to the left) */
+.left-banner {
+	height: 600px;
+	width: 120px;
+	position: absolute;
+	top: 35px;
+	left: 50%;
+	margin-left: -605px;
+}
+
+/* right ads (located outside of content to the right) */
+.right-banner {
+	height: 600px;
+	width: 120px;
+	position: absolute;
+	top: 35px;
+	left: 50%;
+	margin-left: 485px;
+}
+
+/* can be used for the left or right ads areas */
+.ad-side1 {
+	position: relative;
+	top: 0px;
+}
+
+.ad-side2 {
+	position: relative;
+    top: 15px;
+}
+
+.ad-side3 {
+	position: relative;
+    top: 30px;
+}
+
+.ad-side4 {
+	position: relative;
+    top: 45px;
+}
+
+.ad-side5 {
+	position: relative;
+	top: 60px;
+}
+
+.ad-side6 {
+	position: relative;
+    top: 75px;
+}
+
+.ad-side7 {
+	position: relative;
+    top: 90px;
+}
+
+.ad-side8 {
+	position: relative;
+    top: 105px;
+}
+
+/* bottom ads (located at the very bottom of content) */
+.bottom-banner {
+   	width: 825px;
+	position: relative;
+    float: left;
+   	margin-left: 27px;
+	margin-bottom: 15px;
+}
+
+.ad-bottom1 {
+   position: relative;
+   float: left;
+   left: 0px;
+}
+
+.ad-bottom2 {
+   position: relative;
+   float: left;
+   left: 15px;
+}
+
+.ad-bottom3 {
+   position: relative;
+   float: left;
+   left: 30px;
+}
+
+.ad-bottom4 {
+   position: relative;
+   float: left;
+   left: 45px;
+}
+
+.ad-bottom5 {
+   position: relative;
+   float: left;
+   left: 60px;
+}
+
+.ad-bottom6 {
+   position: relative;
+   float: left;
+   left: 75px;
+}
+
+/****************************************
+
+JQUERY Dropdowns
+
+*****************************************/
+
+/* we are using the superfish script for all dropdowns */
+/* PRIMARY SITE MENU (located in content/branding) */
+/* menu essentials */
+.sf-menu ul {
+	position: absolute;
+	top: -999em;
+	width: 128px;  /* left offset of submenus need to match (see below) */
+}
+
+.sf-menu ul li {
+	width: 128px;
+}
+
+.sf-menu li:hover {
+	visibility: inherit;  /* fixes IE7 'sticky bug' */
+}
+
+.sf-menu li {
+	float: left;
+	position: relative;
+}
+
+.sf-menu a {
+	display: block;
+	position: relative;
+}
+
+.sf-menu li:hover ul,
+.sf-menu li.sfHover ul {
+	left: 0;
+	top: 38px;  /* match top ul list item height */
+	z-index: 99;
+}
+
+ul.sf-menu li:hover li ul,
+ul.sf-menu li.sfHover li ul {
+	top: -999em;
+}
+
+ul.sf-menu li li:hover ul,
+ul.sf-menu li li.sfHover ul {
+	left: 128px;  /* match ul width */
+	top: 0;
+}
+
+ul.sf-menu li li:hover li ul,
+ul.sf-menu li li.sfHover li ul {
+	top: -999em;
+}
+
+ul.sf-menu li li li:hover ul,
+ul.sf-menu li li li.sfHover ul {
+	left: 128px;  /* match ul width */
+	top: 0;
+}
+
+/* menu style */
+.sf-menu {
+	float: left;
+}
+
+.sf-menu li {
+	background: transparent url(../images/main/menu_sprite.png) 0 0 no-repeat;
+    color: #000000;
+}
+
+/* special id just for the far right menu button li */
+.sf-menu li#menu-rightside {
+    background: transparent url(../images/main/menu_sprite_right.png) 0 0 no-repeat;
+    color: #000000;
+}
+
+/* sub */
+.sf-menu li li  {
+	background: #E0E3ED;
+	color: #000000;
+	border-left: 1px solid #9EB0CB;
+	border-right: 1px solid #9EB0CB;
+	border-bottom: 1px solid #9EB0CB;
+}
+
+.sf-menu li a {
+	text-align: center;
+	font-size: 16px;
+	text-decoration: none;
+	width: 128px;
+	height: 25px;
+	display: block;
+ 	padding-top: 13px;  
+}
+
+/* states */
+.sf-menu a, .sf-menu a:visited  { /* visited pseudo selector so IE6 applies text colour*/
+	background-position: 0px 0px;
+	color: #000000;
+}
+
+.sf-menu li:hover, .sf-menu li.sfHover,
+.sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active {
+	background-position: 0px 0px;
+	color: #789F00;
+}
+
+/* special id just for the far right menu button li states */
+.sf-menu #menu-rightside li:hover, .sf-menu #menu-rightside li.sfHover,
+.sf-menu #menu-rightside a:focus, .sf-menu #menu-rightside a:hover, .sf-menu #menu-rightside a:active {
+	background-position: 0px 0px;
+	color: #789F00;
+}
+
+/* sub states */
+.sf-menu li li:hover, .sf-menu li li.sfHover,
+.sf-menu li li a:focus, .sf-menu li li a:hover, .sf-menu li li a:active {
+	background: #E0E3ED;
+	color: #789F00;
+	cccccolor: #95C721;
+}
+
+/* apply hovers to modern browsers */
+a:focus > .sf-sub-indicator,
+a:hover > .sf-sub-indicator,
+a:active > .sf-sub-indicator,
+li:hover > a > .sf-sub-indicator,
+li.sfHover > a > .sf-sub-indicator {
+	background-position: -10px -100px;  /* arrow hovers for modern browsers*/
+}
+
+/* point right for anchors in subs */
+.sf-menu ul .sf-sub-indicator { background-position:  -10px 0; }
+.sf-menu ul a > .sf-sub-indicator { background-position:  0 0; }
+
+/* apply hovers to modern browsers */
+.sf-menu ul a:focus > .sf-sub-indicator,
+.sf-menu ul a:hover > .sf-sub-indicator,
+.sf-menu ul a:active > .sf-sub-indicator,
+.sf-menu ul li:hover > a > .sf-sub-indicator,
+.sf-menu ul li.sfHover > a > .sf-sub-indicator {
+	background-position: -10px 0;  /* arrow hovers for modern browsers*/
+}
+
+/* shadows for all but IE6 */
+.sf-shadow ul {
+	background:	url('../images/superfish/shadow.png') no-repeat bottom right;
+	padding: 0 8px 9px 0;
+	-moz-border-radius-bottomleft: 17px;
+	-moz-border-radius-topright: 17px;
+	-webkit-border-top-right-radius: 17px;
+	-webkit-border-bottom-left-radius: 17px;
+}
+
+.sf-shadow ul.sf-shadow-off {
+	background: transparent;
+}
+
+/****************************************
+
+JQUERY Tabs
+
+*****************************************/
+
+/* TABS TOPS - basics for ul, li, and a  */
+ul.tabs { 
+	border-bottom: 1px solid #666;	
+	height: 30px;
+}
+
+/* single tab */
+ul.tabs li { 
+	float: left;	 
+	text-indent: 0;
+}
+
+/* link inside the tab */
+ul.tabs a { 
+	background: transparent url(../images/tabs/tabs_sprite.png) -420px 0 no-repeat;
+	color: #333;
+	font-size: 13px;
+	text-align: center;	
+	text-decoration: none;
+	line-height: 30px;
+	height: 30px;  
+	width: 134px;
+	display: block;
+	position: relative;
+	top: 1px;
+}
+
+/* states */
+ul.tabs a:hover {
+	background-position: -420px -31px;	
+	color: #FFFFFF;	
+}
+
+ul.tabs a:active {
+	outline: none;		
+}
+
+/* active tab uses a class name "current" */
+ul.tabs a.current, ul.tabs a.current:hover, ul.tabs li.current a {
+	background-position: -420px -62px;		
+	color: #000000 !important;
+	cursor: default !important; 
+}
+
+/* different widths for tabs, use a class name: s, l, xl */
+/* width 1 */
+ul.tabs a.s 			{ background-position: -553px 0; width:81px; }
+ul.tabs a.s:hover 	{ background-position: -553px -31px; }
+ul.tabs a.s.current  { background-position: -553px -62px; }
+
+/* width 2 */
+ul.tabs a.l 			{ background-position: -247px -0px; width:174px; }
+ul.tabs a.l:hover 	{ background-position: -247px -31px; }
+ul.tabs a.l.current  { background-position: -247px -62px; }
+
+/* width 3 */
+ul.tabs a.xl 			{ background-position: 0 -0px; width:248px; }
+ul.tabs a.xl:hover 	{ background-position: 0 -31px; }
+ul.tabs a.xl.current { background-position: 0 -62px; }
+
+/* tab bodies */
+.panes {
+    background-color: #FFFFFF;
+    color: inherit;
+    border: 1px solid #999;
+    border-top: 0;
+    width: 848px;
+	padding: 15px;
+}
+
+/* initially all panes are hidden */ 
+.panes panes-individual {
+	display: none;		
+}
+
+/****************************************
+
+JQUERY Popups
+
+*****************************************/
+
+/* we are using the fancybox script for all popup boxes */
+
+/* fancybox styles */
+#fancybox-loading {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 40px;
+	height: 40px;
+	margin-top: -20px;
+	margin-left: -20px;
+	cursor: pointer;
+	overflow: hidden;
+	z-index: 1104;
+	display: none;
+}
+
+#fancybox-loading div {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 40px;
+	height: 480px;
+	background-image: url(../images/fancybox/fancybox.png);
+}
+
+#fancybox-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1100;
+	display: none;
+}
+
+#fancybox-tmp {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	overflow: auto;
+	display: none;
+}
+
+#fancybox-wrap {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 20px;
+	z-index: 1101;
+	outline: none;
+	display: none;
+}
+
+#fancybox-outer {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+}
+
+#fancybox-content {
+	width: 0;
+	height: 0;
+	padding: 0;
+	outline: none;
+	position: relative;
+	overflow: hidden;
+	z-index: 1102;
+	border: 0px solid #fff;
+}
+
+#fancybox-hide-sel-frame {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: transparent;
+	z-index: 1101;
+}
+
+#fancybox-close {
+	position: absolute;
+	top: -15px;
+	right: -15px;
+	width: 30px;
+	height: 30px;
+	background: transparent url(../images/fancybox/fancybox.png) -40px 0px;
+	cursor: pointer;
+	z-index: 1103;
+	display: none;
+}
+
+#fancybox-error {
+	color: #444;
+	font: normal 12px/20px Arial;
+	padding: 14px;
+	margin: 0;
+}
+
+#fancybox-img {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	border: none;
+	outline: none;
+	line-height: 0;
+	vertical-align: top;
+}
+
+#fancybox-frame {
+	width: 100%;
+	height: 100%;
+	border: none;
+	display: block;
+}
+
+#fancybox-left, #fancybox-right {
+	position: absolute;
+	bottom: 0px;
+	height: 100%;
+	width: 49%;
+	cursor: pointer;
+	outline: none;
+	background: transparent url(../images/fancybox/blank.gif);
+	z-index: 1102;
+	display: none;
+}
+
+#fancybox-left {
+	left: 0px;
+}
+
+#fancybox-right {
+	right: 0px;
+}
+
+#fancybox-left-ico, #fancybox-right-ico {
+	position: absolute;
+	top: 50%;
+	left: -9999px;
+	width: 30px;
+	height: 30px;
+	margin-top: -15px;
+	cursor: pointer;
+	z-index: 1102;
+	display: block;
+}
+
+#fancybox-left-ico {
+	background-image: url(../images/fancybox/fancybox.png);
+	background-position: -40px -30px;
+}
+
+#fancybox-right-ico {
+	background-image: url(../images/fancybox/fancybox.png);
+	background-position: -40px -60px;
+}
+
+#fancybox-left:hover, #fancybox-right:hover {
+	visibility: visible; /* IE6 */
+}
+
+#fancybox-left:hover span {
+	left: 20px;
+}
+
+#fancybox-right:hover span {
+	left: auto;
+	right: 20px;
+}
+
+.fancybox-bg {
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	width: 20px;
+	height: 20px;
+	z-index: 1001;
+}
+
+#fancybox-bg-n {
+	top: -20px;
+	left: 0;
+	width: 100%;
+	background-image: url(../images/fancybox/fancybox-x.png);
+}
+
+#fancybox-bg-ne {
+	top: -20px;
+	right: -20px;
+	background-image: url(../images/fancybox/fancybox.png);
+	background-position: -40px -162px;
+}
+
+#fancybox-bg-e {
+	top: 0;
+	right: -20px;
+	height: 100%;
+	background-image: url(../images/fancybox/fancybox-y.png);
+	background-position: -20px 0px;
+}
+
+#fancybox-bg-se {
+	bottom: -20px;
+	right: -20px;
+	background-image: url(../images/fancybox/fancybox.png);
+	background-position: -40px -182px; 
+}
+
+#fancybox-bg-s {
+	bottom: -20px;
+	left: 0;
+	width: 100%;
+	background-image: url(../images/fancybox/fancybox-x.png);
+	background-position: 0px -20px;
+}
+
+#fancybox-bg-sw {
+	bottom: -20px;
+	left: -20px;
+	background-image: url(../images/fancybox/fancybox.png);
+	background-position: -40px -142px;
+}
+
+#fancybox-bg-w {
+	top: 0;
+	left: -20px;
+	height: 100%;
+	background-image: url(../images/fancybox/fancybox-y.png);
+}
+
+#fancybox-bg-nw {
+	top: -20px;
+	left: -20px;
+	background-image: url(../images/fancybox/fancybox.png);
+	background-position: -40px -122px;
+}
+
+#fancybox-title {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 12px;
+	z-index: 1102;
+}
+
+.fancybox-title-inside {
+	padding-bottom: 10px;
+	text-align: center;
+	color: #333;
+	background: #fff;
+	position: relative;
+}
+
+.fancybox-title-outside {
+	padding-top: 10px;
+	color: #fff;
+}
+
+.fancybox-title-over {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	color: #FFF;
+	text-align: left;
+}
+
+#fancybox-title-over {
+	padding: 10px;
+	background-image: url(../images/fancybox/fancy_title_over.png);
+	display: block;
+}
+
+.fancybox-title-float {
+	position: absolute;
+	left: 0;
+	bottom: -20px;
+	height: 32px;
+}
+
+#fancybox-title-float-wrap {
+	border: none;
+	border-collapse: collapse;
+	width: auto;
+}
+
+#fancybox-title-float-wrap td {
+	border: none;
+	white-space: nowrap;
+}
+
+#fancybox-title-float-left {
+	padding: 0 0 0 15px;
+	background: url(../images/fancybox/fancybox.png) -40px -90px no-repeat;
+}
+
+#fancybox-title-float-main {
+	color: #FFF;
+	line-height: 29px;
+	font-weight: bold;
+	padding: 0 0 3px 0;
+	background: url(../images/fancybox/fancybox-x.png) 0px -40px;
+}
+
+#fancybox-title-float-right {
+	padding: 0 0 0 15px;
+	background: url(../images/fancybox/fancybox.png) -55px -90px no-repeat;
+}
+
+/* IE6, IE7, IE8 */
+.fancybox-ie .fancybox-bg { background: transparent !important; }
+
+.fancybox-ie #fancybox-bg-n { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=../images/fancybox/fancy_shadow_n.png, sizingMethod='scale'); }
+.fancybox-ie #fancybox-bg-ne { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=../images/fancybox/fancy_shadow_ne.png, sizingMethod='scale'); }
+.fancybox-ie #fancybox-bg-e { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=../images/fancybox/fancybox/fancy_shadow_e.png, sizingMethod='scale'); }
+.fancybox-ie #fancybox-bg-se { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=../images/fancybox/fancybox/fancy_shadow_se.png, sizingMethod='scale'); }
+.fancybox-ie #fancybox-bg-s { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=../images/fancybox/fancybox/fancy_shadow_s.png, sizingMethod='scale'); }
+.fancybox-ie #fancybox-bg-sw { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=../images/fancybox/fancybox/fancy_shadow_sw.png, sizingMethod='scale'); }
+.fancybox-ie #fancybox-bg-w { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=../images/fancybox/fancybox/fancy_shadow_w.png, sizingMethod='scale'); }
+.fancybox-ie #fancybox-bg-nw { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=../images/fancybox/fancybox/fancy_shadow_nw.png, sizingMethod='scale'); }
+
+/****************************************
+
+Individual Profile Pages (Member Area)
+
+*****************************************/
+
+/* COMPANY PROFILE LINK - basics for ul, li, and a */
+/* single item list */
+#company-profile-link {
+	font-size: 24px;
+	position: absolute;
+	right: 45px;
+	top: 45px;
+}
+
+#company-profile-link li a {
+	background: transparent url(../images/main/company_profile.png) 0 0 no-repeat;
+	color: #000000;
+	height: 32px;
+	padding-left: 35px;
+}
+
+/* states */
+#company-profile-link li a:visited {
+	color: #000000;
+	background-color: inherit;
+    text-decoration: none;
+}
+
+#company-profile-link li a:hover, .company-profile-link li a:active {
+	color: #789F00;
+	background-color: inherit;
+    text-decoration: none;
+}
+
+/* HELP TOOLS - basics for ul, li, and a */
+#help-tools {
+	width: 193px;
+	float: left;
+	clear: left;
+	padding-left: 25px;
+	padding-bottom: 10px;
+}
+
+#help-tools li {
+	padding-bottom: 10px;
+}
+
+#help-tools li a {
+	height: 56px;
+	width: 203px;
+	display: block;
+}
+
+#help-tools li#get-profile a {
+	background: transparent url(../images/main/get_profile_sprite.png) 0 0 no-repeat;
+	color: inherit;
+}
+
+#help-tools li#get-connected a {
+	background: transparent url(../images/main/get_connected_sprite.png) 0 0 no-repeat;
+	color: inherit;
+}
+
+#help-tools li#contact-manager a {
+	background: transparent url(../images/main/contact_manager_sprite.png) 0 0 no-repeat;
+	color: inherit;
+}
+
+/* states */
+#help-tools li#get-profile a:visited, #help-tools li#get-connected a:visited, #help-tools li#contact-manager a:visited {
+	background-position: 0px 0px;
+	color: inherit;
+ }
+
+#help-tools li#get-profile a:hover, #help-tools li#get-profile a:active, #help-tools li#get-connected a:hover, #help-tools li#get-connected a:active, #help-tools li#contact-manager a:hover, #help-tools li#contact-manager a:active {
+	background-position: 0px -56px;
+	color: inherit;
+ }
+
+#company-profile-options {
+	font-size: 16px;
+	font-family: Tahoma, Geneva, sans-serif;
+	text-align: center;
+	position: absolute;
+	left: 50%;
+	margin-left: -110px;
+	padding-top: 40px;
+}
+
+/* PROFILE EXTRA LINK - basics for ul, li, and a */
+/* single item list */
+#profile-extra {
+	font-size: 0.82em;
+	float: left;
+	clear: left;
+	padding-bottom: 40px;
+	padding-left: 40px;
+}
+
+#profile-extra li {
+	background: transparent url(../images/main/profile_extra.png) 0 0 no-repeat;
+	color: #B00000;
+	height: 25px;
+	padding-left: 27px;
+}
+
+#profile-extra li a {
+	text-decoration: none;
+}
+
+/* houses the 3 tabs/panes for the member inventory and is needed because of the above floats */
+#member-inventory {
+	width: 880px;
+	float: left;
+	clear: both;
+}
+
+/****************************************
+
+Company Profile Pages
+
+*****************************************/
+
+#company-general, #company-specific {
+	word-wrap: break-word;
+	font-size: 0.91em;
+	width: 300px;
+	float: left;
+}
+
+.company-contact {
+	padding-right: 10px;
+}
+
+.company-contact li {
+	padding-bottom: 3px;
+}
+
+.company-directory {
+  	text-align: center;
+	border-top: 1px solid #CCC;
+	width: 760px;
+  	margin: 0 auto;
+	margin-bottom: 40px;
+  	overflow: hidden;
+}
+
+.company-directory li{
+  	line-height:1.5em;
+  	border-bottom: 1px solid #CCC;
+  	width: 33.333%;
+	display: inline;
+	float: left;
+ }
+
+/****************************************
+
+Individual Submit/Edit Inventory Pages (located in the individual profile pages)
+
+*****************************************/
+
+.upload-fieldset {
+	background: inherit;
+	color: inherit;
+	border: none;
+	padding: 0px;
+}
+
+/* used with a P to wrap the type=file input  */
+.input-upload {
+	padding-bottom: 5px;
+}
+
+/* error/success names can not change, must match the snippet code */
+.fu-error {
+    color: #B00000;
+	background-color: inherit;
+	font-size: 12px;
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+
+.fu-success {
+    color: #090;
+	background-color: inherit;
+	font-size: 12px;
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+
+/* PICTURE PREVIEW LISTS - basics for ul, li, and a */
+.picture-preview li {
+	display: inline;
+}
+
+.picture-preview li a {
+	text-decoration: none;
+}
+
+/* applied to each img src for the above list */
+.preview-thumbnail {
+	border: 2px solid #000;
+	height: 90px;
+	margin-right: 8px;
+}
+
+/* ATTACHMENT PREVIEW LISTS - basics for ul, li, and a */
+.attachment-preview li {
+	padding-right: 10px;
+}
+
+.attachment-preview li a {
+	background-color: inherit;	
+	color: #666;
+	font-size: 13px;
+	text-decoration: none;
+}
+
+/* states */
+.attachment-preview li a:visited {
+  	color: #666;
+	background-color: inherit;
+    text-decoration: none;
+}
+
+.attachment-preview li a:hover, .attachment-preview li a:active {
+	color: #789F00;
+	background-color: inherit;
+    text-decoration: none;
+}
+
+/****************************************
+
+Individual Lot Pages
+
+*****************************************/
+
+/* top */
+.lot-pictures {
+    background-color: #9CA5A9;
+	color: inherit;
+	border: 2px solid #3C4448;
+	width: 876px;
+	float: left;
+	clear: both;
+	margin-top: 25px;
+	margin-bottom: 40px;
+}
+
+/* PICTURE LISTS - basics for ul, li, and a */
+.picture-list {
+	text-align: center;
+}
+
+.picture-list li {
+	display: inline;
+}
+
+.picture-list li a {
+	text-decoration: none;
+}
+
+/* applied to each img src for the above list */
+.picture-thumbnail {
+	border: 6px solid #FFF;
+	height: 110px;
+	margin-top: 12px;
+	margin-bottom: 10px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+/* left side */
+.lot-extras, .rfq-extras {
+	width: 380px;
+	float: left;
+	clear: left;
+	padding-right: 40px;
+	margin-top: 30px;
+	margin-bottom: 8px;
+}
+
+.lot-description, .rfq-notes {
+    background-color: #EBEDF3;
+	color: inherit;
+	border: 2px solid #3C4448;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px; 
+	height: 250px;
+	width: 376px;
+	margin-bottom: 8px;
+    overflow: auto;
+}
+
+.description-content, .notes-content {
+	font-size: 0.90em;
+	padding-top: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.lot-attachments, .rfq-attachments {
+    background-color: #EBEDF3;
+	color: inherit;
+	border: 2px solid #3C4448;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px; 
+	min-height: 100px;
+	width: 376px;
+}
+
+/* ATTACHMENT LISTS - basics for ul, li, and a */
+.attachment-list {
+	padding-left: 25px;
+	padding-right: 25px;
+	padding-bottom: 8px;
+	font-size: 0.90em;
+}
+
+.attachment-list li {
+	background: transparent url(../images/general/list_icon.png) 0 center no-repeat;
+	color: inherit;
+	display: block;
+	padding-top: 5px;
+	padding-bottom: 7px;
+	padding-left: 17px;
+}
+
+.attachment-list li a {
+	background-color: inherit;	
+	color: #666;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+/* states */
+.attachment-list li a:visited {
+  	color: #666;
+	background-color: inherit;
+    text-decoration: none;
+}
+
+.attachment-list li a:hover, .attachment-list li a:active {
+	color: #789F00;
+	background-color: inherit;
+    text-decoration: none;
+}
+
+/* right side */
+.lot-questions {
+	background-color: #EBEDF3;
+	color: inherit;
+	border: 2px solid #3C4448;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px; 
+	height: 358px;
+	width: 456px;
+	float: right;
+	clear: right;
+	margin-top: 30px;
+	margin-bottom: 8px;
+	overflow: auto;
+}
+
+.lot-delivery {
+	background-color: #EBEDF3;
+	color: inherit;
+	border: 2px solid #3C4448;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px; 
+	height: 250px;
+	width: 376px;
+	float: right;
+	clear: right;
+	margin-top: 30px;
+	margin-bottom: 8px;
+	overflow: auto;
+}
+
+/* quip/comment forms */
+/* comments container */
+.quip {
+	
+}
+
+/* individual comments */
+.quip-comment-body {
+	border-bottom: 1px dotted #3C4448;
+}
+
+/* comment form */
+.quip-fld {
+	margin-left: 6px;
+}
+
+#quip-comment-name, #quip-comment-email {
+	border: 1px solid #9EB0CB;
+    -webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px; 
+    width: 220px;
+	padding: 2px;
+	margin-bottom: 5px;
+}
+
+.label-comment {
+	margin-left: 6px;
+}
+
+#quip-comment-box {
+	width: 405px;        
+    height: 125px;
+	margin-left: 6px;
+	margin-right: 6px;
+}
+
+.submit-post {
+	margin-right: 4px;
+	margin-bottom: 6px;
+}
+
+/****************************************
+
+Individual RFQ/Inquiry Pages
+
+*****************************************/
+
+#rfq-list {
+	float: left;
+	clear: left;
+}
+
+#inquiry-list {
+	float: right;
+	clear: right;
+}
+
+#rfq-num {
+	background-color: inherit;
+	color: #333;
+	font-size: 0.95em;
+	float: left;
+	padding-bottom: 10px;
+}
+
+#custom-rfq-num {
+	background-color: inherit;
+	color: #333;
+	font-size: 0.95em;
+	float: right;
+	padding-bottom: 10px;
+}
+
+/* RFQ INFO LIST - basics for ul, li, and a */
+#rfq-info-list {
+	width: 840px;
+	margin: 0 auto;
+}
+
+#rfq-info-list li {
+	border: 2px solid #94C720;
+	-webkit-border-radius: 18px;
+	-moz-border-radius: 18px;
+	border-radius: 18px;
+	font-size: 0.95em;
+	font-weight: bold;
+	text-align: center;
+	width: 232px;
+	float: left;
+	display: inline;
+	padding: 8px;
+	margin-left: 14px;
+	margin-right: 14px;
+	margin-bottom: 35px;
+}
+
+
+
+/* ==|== non-semantic helper classes ========================================
+   Please define your styles before this section.
+   ========================================================================== */
+
+/* For image replacement */
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
+.ir br { display: none; }
+
+/* Hide from both screenreaders and browsers: h5bp.com/u */
+.hidden { display: none !important; visibility: hidden; }
+
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { visibility: hidden; }
+
+/* Contain floats: h5bp.com/q */ 
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+
+
+/* ==|== media queries ======================================================
+   PLACEHOLDER Media Queries for Responsive Design.
+   These override the primary ('mobile first') styles
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 480px) {
+  /* Style adjustments for viewports 480px and over go here */
+
+}
+
+@media only screen and (min-width: 768px) {
+  /* Style adjustments for viewports 768px and over go here */
+
+}
+
+
+
+/* ==|== print styles =======================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+ 
+@media print {
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
+  a, a:visited { text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } /* h5bp.com/t */
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}
